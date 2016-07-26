@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+
+path {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+/*
+path:hover {
+  fill: red;
+}
+*/
+
+.ticks {
+  font: 10px sans-serif;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: #000;
+  stroke-opacity: 0.3;
+  stroke-width: 10px;
+}
+
+.track-inset {
+  stroke: #ddd;
+  stroke-width: 8px;
+}
+
+.track-overlay {
+  pointer-events: stroke;
+  stroke-width: 50px;
+  cursor: crosshair;
+}
+
+.handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: 0.5;
+  stroke-width: 1.25px;
+}
+
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">2008</a></li>
+        <li><a class="btab" href="#b_tab" data-toggle="tab">2012</a></li>
+        <li><a class="ctab" href="#c_tab" data-toggle="tab">2016</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="a_tab">
+            <h1>2008</h1>
+            <acontent></acontent>
+        </div>
+        <div class="tab-pane fade" id="b_tab">
+            <h1>2012</h1>
+            <bcontent></bcontent>
+        </div>
+        <div class="tab-pane fade" id="c_tab">
+            <h1>2016</h1>
+            <ccontent></ccontent>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+var width = 960,
+    height = 800,
+    slheight = 700,
+    slwidth = 900;
+
+var election_2008 = {};
+var election_2012 = {};
+var election_2016 = {};
+var inflation = 1.1;
+var voting_prop = 0.6
+var hisp_dem_repub_split = 0.25
+var hisp_current = 17;
+
+
+var path = d3.geo.path();
+
+d3.csv("clean_election_data_2008.csv", function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+    d["Dems"] = (+d["Dems"]).toFixed(2);
+    d["Repub"] = (+d["Repub"]).toFixed(2);
+    d["Dems"] = +d["Dems"];
+    d["Repub"] = +d["Repub"];
+    var total = d["Dems"] + d["Repub"];
+    d["Dems"] = 100 * (d["Dems"] / total);
+    d["Repub"] = 100 * (d["Repub"] / total);
+
+    if (d["Dems"] > d["Repub"]) {
+      color = "steelblue";
+    } else {
+      color = "red";
+    }
+
+    election_2008[d["FIPS"]] = {};
+    election_2008[d["FIPS"]]['Dems']  = d["Dems"];
+    election_2008[d["FIPS"]]['Repub']  = d["Repub"];
+    election_2008[d["FIPS"]]['color'] = color;
+  });
+});
+
+d3.csv("clean_election_data_2012.csv", function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+    d["Dems"] = +d["Dems"];
+    d["Repub"] = +d["Repub"];
+
+    if (d["Dems"] > d["Repub"]) {
+      color = "steelblue";
+    } else {
+      color = "red";
+    }
+
+    election_2012[d["FIPS"]] = {};
+    election_2012[d["FIPS"]]["Dems"]  = d["Dems"];
+    election_2012[d["FIPS"]]["Repub"]  = d["Repub"];
+    election_2012[d["FIPS"]]["color"] = color;
+  });
+});
+
+
+var svg = d3.select("body").select("#a_tab").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+
+
+function show_2008() {
+
+  d3.selectAll("path").remove();
+  d3.select("body").select("#a_tab").select("svg").remove();
+  svg = d3.select("body").select("#a_tab").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+  d3.json("us.json", function(error, topology) {
+    if (error) throw error;
+
+    svg.selectAll("path")
+      .data(topojson.feature(topology, topology.objects.counties).features)
+      .enter().append("path")
+      .attr("d", path)
+      .style("fill", function(d) { try {return election_2008[d.id]['color'];} catch (err) { return "steelgrey";}});
+  });
+
+  
+}
+
+function show_2012() {
+
+  d3.selectAll("path").remove();
+  d3.select("body").select("#b_tab").select("svg").remove();
+  svg = d3.select("body").select("#b_tab").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+  d3.json("us.json", function(error, topology) {
+    if (error) throw error;
+
+    svg.selectAll("path")
+      .data(topojson.feature(topology, topology.objects.counties).features)
+      .enter().append("path")
+      .attr("d", path)
+      .style("fill", function(d) {try {return election_2012[d.id]['color'];} catch (err) { return "steelgrey";}});
+  });
+}
+
+function show_2016() {
+
+  d3.selectAll("path").remove();
+  d3.select("body").select("#c_tab").select("svg").remove();
+
+/* Use 2008 instead of 2012 as reference as 2012 has FIPs = 0 (state values as well) */
+for (var FIPS in election_2008) {
+    try {
+      var color_2012 = election_2012[FIPS]["color"];
+      var vote_dems_2012 = +election_2012[FIPS]["Dems"];
+      var vote_repub_2012 = +election_2012[FIPS]["Repub"];
+    }
+    catch (err) {
+      var color_2012 = "steelgrey";
+      var vote_dems_2012 = 1;
+      var vote_repub_2012 = 1;
+    }
+    try {
+      var color_2008 = election_2008[FIPS]["color"];
+      var vote_dems_2008 = +election_2008[FIPS]["Dems"];
+      var vote_repub_2008 = +election_2008[FIPS]["Repub"];
+    }
+    catch (err) {
+      var color_2008 = "steelgrey";
+      var vote_dems_2008 = 1;
+      var vote_repub_2008 = 1;
+    }
+    
+    var color_2016 = null;
+    
+    var pred_2016 = {};
+    pred_2016["Dems"] = inflation * (vote_dems_2012 - vote_dems_2008) + vote_dems_2012;
+    pred_2016["Repub"]  = inflation * (vote_repub_2012 - vote_repub_2008) + vote_repub_2012;
+    
+    var total = pred_2016["Dems"] + pred_2016["Repub"];
+    
+    pred_2016["Dems"] = 100 * (pred_2016["Dems"] / total);
+    pred_2016["Repub"] = 100 * (pred_2016["Repub"] / total);
+    
+    if (pred_2016["Dems"] == pred_2016["Repub"] == 1) {
+      color = "steelgrey"
+    } else if (pred_2016["Dems"] > pred_2016["Repub"]) {
+      color = "steelblue";
+    } else {
+      color = "red";
+    }
+
+    election_2016[FIPS] = {};
+    election_2016[FIPS]["Dems"]  = pred_2016["Dems"];
+    election_2016[FIPS]["Repub"]  = pred_2016["Repub"];
+    election_2016[FIPS]["color"] = color;
+}
+
+
+  svg = d3.select("body").select("#c_tab").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+  d3.json("us.json", function(error, topology) {
+    if (error) throw error;
+
+    svg.selectAll("path")
+      .data(topojson.feature(topology, topology.objects.counties).features)
+      .enter().append("path")
+      .attr("d", path)
+      .style("fill", function(d) {try {return election_2016[d.id]['color'];} catch (err) { return "steelgrey";}});
+  });
+
+
+  var xScale = d3.scale.linear()
+                .domain([0, 100])
+                .range([0, slwidth])
+                .clamp(true);
+  var slider = svg.append("g")
+                .attr("class", "slider")
+                .attr("transform", "translate(20," +  slheight + ")");
+
+  var handle = slider.insert("circle", ".track-overlay")
+    .attr("class", "handle")
+    .attr("r", 9);
+
+function hispanic(h) {
+    handle.attr("cx", xScale(h));
+    var county_influx = h - hisp_current;
+    for (var FIPS in election_2016) {
+       var dems = election_2016[FIPS]["Dems"] + county_influx * voting_prop * (1 - hisp_dem_repub_split);
+       var repub = election_2016[FIPS]["Repub"] + county_influx * voting_prop * hisp_dem_repub_split;
+       var total = dems + repub;
+       dems = (dems / total) * 100;
+       repub = (repub / total) * 100;
+       if (dems > repub) {
+          color = "steelblue";
+        } else {
+          color = "red";
+        }
+        election_2016[FIPS]["color"] = color;
+    }
+
+     d3.json("us.json", function(error, topology) {
+        if (error) throw error;
+
+        svg.selectAll("path")
+           .data(topojson.feature(topology, topology.objects.counties).features)
+           .transition()
+          .duration(750)
+          .attr("d", path)
+          .style("fill", function(d) {try {return election_2016[d.id]['color'];} catch (err) { return "steelgrey";}});
+    });
+    
+/*
+    svg.style("background-color", d3.hsl(h, 0.8, 0.8));
+*/
+}
+
+  drag = d3.behavior.drag()
+        .on("drag", function() { hispanic(xScale.invert(d3.event.x)); });
+
+  slider.append("line")
+    .attr("class", "track")
+    .attr("x1", xScale.range()[0])
+    .attr("x2", xScale.range()[1])
+    .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-inset")
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-overlay")
+    .call(drag);
+
+
+      
+
+slider.insert("g", ".track-overlay")
+    .attr("class", "ticks")
+    .attr("transform", "translate(0," + 18 + ")")
+  .selectAll("text")
+  .data(xScale.ticks(10))
+  .enter().append("text")
+    .attr("x", xScale)
+    .attr("text-anchor", "middle")
+    .text(function(d) { return d + "%"; });
+
+
+slider.transition() // Start with current percentage of hispanics
+    .duration(750)
+    .tween("hispanic", function() {
+      var i = d3.interpolate(0, 17);
+      return function(t) { hispanic(i(t)); };
+    });
+
+}
+
+
+d3.select(".atab").on("click", show_2008);
+d3.select(".btab").on("click", show_2012);
+d3.select(".ctab").on("click", show_2016);
+show_2008();
+
+</script>
