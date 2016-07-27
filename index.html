@@ -30,57 +30,74 @@
     <style>
 
         /* Start Vikram - Maps */
-        svg, #container{
-            height: 100%;
-            width: 100%;
-        }
-
-        .state {
+         .state {
             fill-opacity: 0.8;
-            fill: #669999;
+            fill: beige;
             stroke: black;
         }
-
         .state.selected {
             fill-opacity: 1;
             fill: yellow;
             stroke: #222;
         }
-
-
+        .state.distinct {
+            fill-opacity: 0.4;
+            fill: yellow;
+            stroke: #222;
+            stroke-width: 3px;
+        }
         .dem_circle {
             fill: steelblue;
-            fill-opacity: 0.5;
+            fill-opacity: 0.6;
             stroke: black;
         }
-
         .rep_circle {
             fill: red;
             fill-opacity: 0.5;
             stroke: black;
         }
-
         .label {
             font-size: 8pt;
             text-anchor: middle;
             stroke: black;
         }
-
         .ptr {
             stroke: purple;
             stroke-width: 4;
         }
-
         .state_stat_hdr {
             stroke: green;
+            fill: green;
             font-size: 20pt;
             text-anchor: left;
         }
-
         .state_stat_stats {
             stroke: green;
+            fill: green;
             font-size: 15pt;
             text-anchor: left;
+        }
+        .axis path,
+        .axis line {
+            fill: grey;
+            stroke: grey;
+            shape-rendering: crispEdges;
+            stroke-width: `px;
+        }
+        .x.axis path {
+            stroke: grey;
+        }
+        .y.axis path {
+            stroke: grey;
+        }
+        .state_bar_title {
+            stroke: green;
+            fill: green;
+            font-size: 20pt;
+            text-anchor: left;
+        }
+        .state_bar {
+            fill-opacity: 0.8;
         }
 
         /* End: Vikram - Maps */
@@ -213,7 +230,7 @@
                     <div class="row">
                         <div class="col-md-6" id="state_div">
                         </div>
-                        <div class="col-md-6" id="nation_div">
+                        <div class="col-md-6" id="state_bar_div">
                         </div>
 
                     </div>                    
