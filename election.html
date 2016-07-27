@@ -14,6 +14,12 @@
 	stroke: #222;
 }
 
+.state.distinct {
+	fill-opacity: 0.4;
+	fill: yellow;
+	stroke: #222;
+	stroke-width: 3px;
+}
 
 .dem_circle {
 	fill: steelblue;
@@ -238,12 +244,16 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 		.append("path")
 		.attr("class", "state")
 		.attr("d", path)
+		.on('mouseover', function(d) {d3.select(this).style("cursor", "pointer").classed("distinct", true)})
+		.on('mouseout', function(d) {d3.select(this).style("cursor", "default").classed("distinct", false);})
 		.on('mousedown', function(d) {
 		   d3.selectAll(".state").classed("selected", false);
+		   d3.select(this).classed("distinct", false);
 		   d3.select(this).classed("selected", true);
 		   console.log(d);
 		   stateClick(d);
 		});
+		
 
 	map_svg
 		.selectAll(".circle")
@@ -257,10 +267,23 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 									}
 								})
 		.attr("d", path.pointRadius(function(d) {return circscale(Math.pow(d.properties.elvotes,2)); }))
+		.on('mouseover', function(d) {
+			d3.select(this).style("cursor", "pointer");
+			cur_circle = d;
+			cur_state = d3.selectAll(".state").filter(function(d) { return d.id == cur_circle.id; });
+			cur_state.classed("distinct", true);
+		})
+		.on('mouseout', function(d) {
+			d3.select(this).style("cursor", "default");
+			cur_circle = d;
+			cur_state = d3.selectAll(".state").filter(function(d) { return d.id == cur_circle.id; });
+			cur_state.classed("distinct", false);
+		})
 		.on('mousedown', function(d) {
 			cur_circle = d;
 			d3.selectAll(".state").classed("selected", false);
 			cur_state = d3.selectAll(".state").filter(function(d) { return d.id == cur_circle.id; });
+			cur_state.classed("distinct", false);
 			cur_state.classed("selected", true);
 			stateClick(cur_state.data()[0]);
 		});
@@ -273,10 +296,23 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 		.text(function(d) { return d.properties.abbrev; })
 		.attr("x", function(d) { return path.centroid(d)[0]; })
 		.attr("y", function(d) { return path.centroid(d)[1]; })
+		.on('mouseover', function(d) {
+			d3.select(this).style("cursor", "pointer");
+			cur_label = d;
+			cur_state = d3.selectAll(".state").filter(function(d) { return d.id == cur_label.id; });
+			cur_state.classed("distinct", true);
+		})
+		.on('mouseout', function(d) {
+			d3.select(this).style("cursor", "default");
+			cur_label = d;
+			cur_state = d3.selectAll(".state").filter(function(d) { return d.id == cur_label.id; });
+			cur_state.classed("distinct", false);
+		})
 		.on('mousedown', function(d) {
 			cur_label = d;
 			d3.selectAll(".state").classed("selected", false);
 			cur_state = d3.selectAll(".state").filter(function(d) { return d.id == cur_label.id; });
+			cur_state.classed("distinct", false);
 			cur_state.classed("selected", true);
 			stateClick(cur_state.data()[0]);
 		});
