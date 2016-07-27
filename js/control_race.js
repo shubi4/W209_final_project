@@ -1,7 +1,7 @@
 function control_race(id_div, data, title){
 
-	var width = 300,
-		height = 100,
+	var width = 350,
+		height = 200,
 		barHeight = 30;
 
 	var x = d3.scale.linear()
