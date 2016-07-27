@@ -178,6 +178,11 @@ queue()
 	.defer(d3.json, "ptr-adj.json")
 	.await(data_loaded);
 
+function zeroPad(num, places) {
+	var zero = places - num.toString().length + 1;
+	return Array(+(zero > 0 && zero)).join("0") + num;
+}
+
 function format_millions(num) {
 	var num_mill = Math.floor(num / 1000000);
 	var num_hunthou = Math.floor((num - num_mill * 1000000)/1000);
@@ -186,9 +191,9 @@ function format_millions(num) {
 	if (num_mill != 0)
 		num_str = num_str + num_mill.toString() + "," ;
 	if (num_mill != 0 || num_hunthou != 0)
-		num_str = num_str + num_hunthou.toString() + ",";
+		num_str = num_str + zeroPad(num_hunthou, 3) + ",";
 
-	num_str = num_str + num_thou.toString();
+    	num_str = num_str + zeroPad(num_thou, 3);
 
 	return num_str;
 }
