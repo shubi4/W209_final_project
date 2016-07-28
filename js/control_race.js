@@ -70,6 +70,22 @@ function control_race(id_div, data, title){
 	  .attr("style","text-anchor:middle")
       .text(title);
   
+  var loopId = null;
+  var reactivityId = null;  
+	
+	function startAuto(d){
+		addValue(d, d.id, 1);
+		reactivityId = setTimeout(function(){
+			loopId = setInterval(function(){addValue(d, d.id, 1);}, 100);
+			},500);
+	}
+  
+  
+  function stopAuto(){
+	clearInterval(reactivityId);
+	clearInterval(loopId);
+  }
+  
   
   var bar = ctrlrace.selectAll("g")
       .data(data)
@@ -85,6 +101,8 @@ function control_race(id_div, data, title){
       .attr("width", 18)
       .attr("height", 18)
 	  .attr("class", "ctrl_button")
+	  .on("mousedown",function(d) {startAuto(d);})
+	  .on("mouseup",function(d) {stopAuto(d);})
 	  .on("mouseover", function(d) {d3.select(this).style("cursor", "pointer");d3.select(this).attr("class", "ctrl_button_selected")})
 	  .on("mouseout", function(d) {d3.select(this).style("cursor", "default");d3.select(this).attr("class", "ctrl_button")})
 	  .on("click", function(d) {addValue(d, d.id, 1)});
@@ -96,6 +114,8 @@ function control_race(id_div, data, title){
 	  .attr("x2", 15)
       .attr("y2", 23)
 	  .attr("class", "ctrl_line")
+	  .on("mousedown",function(d) {startAuto(d);})
+	  .on("mouseup",function(d) {stopAuto(d);})
 	  .on("mouseover", function(d) {d3.select(this).style("cursor", "pointer")})
 	  .on("mouseout", function(d) {d3.select(this).style("cursor", "default")})
 	  .on("click", function(d) {addValue(d, d.id, 1)});
@@ -106,6 +126,8 @@ function control_race(id_div, data, title){
 	  .attr("x2", 10)
       .attr("y2", 28)
 	  .attr("class", "ctrl_line")
+	  .on("mousedown",function(d) {startAuto(d);})
+	  .on("mouseup",function(d) {stopAuto(d);})
 	  .on("mouseover", function(d) {d3.select(this).style("cursor", "pointer")})
 	  .on("mouseout", function(d) {d3.select(this).style("cursor", "default")})
 	  .on("click", function(d) {addValue(d, d.id, 1)});
@@ -153,7 +175,13 @@ function control_race(id_div, data, title){
 	  {id: "grp4_2", value:  50, class: "rect_rep"}
 	];
 	
+	var data_asian = [
+	  {id: "grp5_1", value:  50, class: "rect_dem"},
+	  {id: "grp5_2", value:  50, class: "rect_rep"}
+	];
+	
 	control_race("hispanic", data_hispanic,"Hispanic");
 	control_race("afro", data_afro,"Afro American");
 	control_race("college", data_college,"College educated white");
 	control_race("no_college", data_non_college,"Non college educated white");
+	control_race("asian", data_asian,"Asian and other");
