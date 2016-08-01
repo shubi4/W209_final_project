@@ -31,9 +31,9 @@
 
         /* Start Vikram - Maps */
          .state {
-            fill-opacity: 0.8;
-            fill: beige;
-            stroke: black;
+            fill-opacity: 0.5;
+            fill: lightgrey;
+            stroke: lightgrey;
         }
         .state.selected {
             fill-opacity: 1;
@@ -48,16 +48,16 @@
         }
         .dem_circle {
             fill: steelblue;
-            fill-opacity: 0.6;
+            fill-opacity: 1;
             stroke: black;
         }
         .rep_circle {
-            fill: red;
-            fill-opacity: 0.5;
+            fill: indianred;
+            fill-opacity: 1;
             stroke: black;
         }
         .label {
-            font-size: 8pt;
+            font-size: 10pt;
             text-anchor: middle;
             stroke: black;
         }
@@ -66,15 +66,15 @@
             stroke-width: 4;
         }
         .state_stat_hdr {
-            stroke: green;
-            fill: green;
+            stroke: black;
+            fill: black;
             font-size: 20pt;
             text-anchor: left;
         }
         .state_stat_stats {
-            stroke: green;
-            fill: green;
-            font-size: 15pt;
+            stroke: grey;
+            fill: grey;
+            font-size: 12pt;
             text-anchor: left;
         }
         .axis path,
@@ -91,13 +91,13 @@
             stroke: grey;
         }
         .state_bar_title {
-            stroke: green;
-            fill: green;
+            stroke: black;
+            fill: black;
             font-size: 20pt;
             text-anchor: left;
         }
         .state_bar {
-            fill-opacity: 0.8;
+            fill-opacity: 1;
         }
 
         /* End: Vikram - Maps */
@@ -165,7 +165,10 @@
                 <a href="#about" onclick=$("#menu-close").click();>The Project</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Predict 2016</a>
+                <a href="#predict" onclick=$("#menu-close").click();>Predict 2016</a>
+            </li>
+            <li>
+                <a href="#past" onclick=$("#menu-close").click();>Past Results</a>
             </li>
             <li>
                 <a href="#footer" onclick=$("#menu-close").click();>Contact</a>
@@ -187,13 +190,20 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Explore past results and Create your own predictions for the 2016 Elections!</h2>
+                <div class="col-lg-12">
+                    <h2 class="text-center">Explore past results and Create your own predictions for the 2016 Elections</h2>
                     <br/>
-                    <p class="lead">For an overview of how the presidential elections work click <a target=_blank href="">here</a>
+                    <p class="lead">
+                    2016 is election year! In November, the presidential candidates will face off in what is shaping up to be a highly contentious and polarized race. More than ever, the electorate looks divided along racial lines. 
                     <br/>
                     <br/>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. 
+                        This project aims to visualize the impact of various racial and demographic groups on the 2016 election results. The electorate has been divided into 5 main groups: Hispanic, African American, Asian and other, College educated whites, non-college-educated whites.  To read more about why we chose these groups click <a href="http://fivethirtyeight.com/features/how-demographics-will-shape-the-2016-election/" target="_blank">here</a>.
+                    <br/>
+                    <br />
+                        We start you off with data from the 2012 election results, showing which states voted Democrat and which states Republican. From there, you can adjust the percentages of voters in each racial group  that will vote Democrat or Republican, and watch how that impacts the 2016 results. The size of the circles drawn on each state is  proportional to the number of <a href="https://en.wikipedia.org/wiki/Electoral_College_(United_States)" target="_blank">Electoral College</a> votes for that state. The color indicates which party wins the state. 
+                    <br/>
+                    <br/>
+                    To view past election results click <a href="#past">here</a>
                     </p>
                 </div>
             </div>
@@ -203,48 +213,75 @@
     </section>
 
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
-        <div class="container-fluid">
+    <!-- Predict -->
+    <section id="predict" class="predict">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <h2>Predict 2016</h2>
                     <hr class="small">
-                    <p class="lead">Click on the plus signs next to the different racial groups to change their voting preference. Click on a state to see its statistics. Hover over a state to view tooltips. </p>
+                    <p class="lead">Click on the '+' signs next to the different racial groups to change their voting preference. 
+                        <br/>
+                        Click on a state to see its statistics.   
+                        <br/>
+                        <br/>
+                    </p>
                 </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8" id="map_div">
                 </div>
-                    <div class="row">
-                        <div class="col-md-8" id="map_div">
-                        </div>
-						
-                        <div class="col-md-2" id="controls_div_1">
-                            <div class="row" id="hispanic" ></div>
-							<div class="row" id="college" ></div>
-                            <div class="row" id="asian" ></div>
-						</div>
-						<div class="col-md-2" id="controls_div_2">	
-                            <div class="row" id="afro"  ></div>
-                            <div class="row" id="no_college" ></div>
-                        </div>
-						
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6" id="state_div">
-                        </div>
-                        <div class="col-md-6" id="state_bar_div">
-                        </div>
 
-                    </div>                    
-                
-                <!-- /.col-lg-10 -->
-            
-            <!-- /.row -->
+                <div class="col-md-2" id="controls_div_1">
+                    <div class="row" id="hispanic" ></div>
+                    <div class="row" id="college" ></div>
+                    <div class="row" id="asian" ></div>
+                </div>
+                <div class="col-md-2" id="controls_div_2">	
+                    <div class="row" id="afro"  ></div>
+                    <div class="row" id="no_college" ></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" id="state_div">
+                </div>
+                <div class="col-md-6" id="state_bar_div">
+                </div>
+
+            </div>                    
         </div>
         <!-- /.container -->
     </section>
 
+    <section id="past" class="past">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h2>2012 Results</h2>
+                    <hr class="small">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8" id="map_2012">
+                </div>
 
-
+                <div class="col-md-4">
+                    <div class="row" id="state_2012" ></div>
+                    <div class="row" id="state_bar_2012" ></div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+    
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
@@ -300,6 +337,8 @@
 
     <!-- Code: us maps creation -->
     <script src="js/usmap.js"></script>
+    <script src="js/usmap-2012.js"></script>
+    
 
     <!-- Code: Race controls creation -->
     <script src="js/control_race.js"></script>

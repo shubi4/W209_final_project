@@ -18,7 +18,11 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.portfolio{
+.predict{
+    background-color: #eeefe9;   
+}
+
+footer{
     background-color: #eeefe9;   
 }
 
@@ -166,7 +170,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(../img/picture1.jpg) no-repeat center center scroll;
+    background: url(../img/Picture1.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -205,7 +209,7 @@ hr.small {
 
 /* Portfolio */
 
-.portfolio {
+.predict {
     padding: 50px 0;
 }
 
