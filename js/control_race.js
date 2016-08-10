@@ -48,7 +48,6 @@ function control_race(id_div, data, title){
 				}
 		   
 			}
-			
 			d3.event.stopPropagation();
 		}
 	}
@@ -81,9 +80,10 @@ function control_race(id_div, data, title){
 	}
   
   
-  function stopAuto(){
+  function stopAuto(d){
 	clearInterval(reactivityId);
 	clearInterval(loopId);
+    USMapModule.updateVotePct({item:id_div, vote_repub:data[1].value});
   }
   
   
@@ -155,29 +155,32 @@ function control_race(id_div, data, title){
 	}
 
 }
+    //
+    // Initialize controls to 2012 levels
+    //
 	var data_hispanic = [
-	  {id: "grp1_1", value:  50, class: "rect_dem"},
-	  {id: "grp1_2", value:  50, class: "rect_rep"}
+	  {id: "grp1_1", value:  71, class: "rect_dem"},
+	  {id: "grp1_2", value:  29, class: "rect_rep"}
 	];
 
 	var data_afro = [
-	  {id: "grp2_1", value:  50, class: "rect_dem"},
-	  {id: "grp2_2", value:  50, class: "rect_rep"}
+	  {id: "grp2_1", value:  93, class: "rect_dem"},
+	  {id: "grp2_2", value:  7, class: "rect_rep"}
 	];
 	
 	var data_college = [
-	  {id: "grp3_1", value:  50, class: "rect_dem"},
-	  {id: "grp3_2", value:  50, class: "rect_rep"}
+	  {id: "grp3_1", value:  44, class: "rect_dem"},
+	  {id: "grp3_2", value:  56, class: "rect_rep"}
 	];
 	
 	var data_non_college = [
-	  {id: "grp4_1", value:  50, class: "rect_dem"},
-	  {id: "grp4_2", value:  50, class: "rect_rep"}
+	  {id: "grp4_1", value:  38, class: "rect_dem"},
+	  {id: "grp4_2", value:  62, class: "rect_rep"}
 	];
 	
 	var data_asian = [
-	  {id: "grp5_1", value:  50, class: "rect_dem"},
-	  {id: "grp5_2", value:  50, class: "rect_rep"}
+	  {id: "grp5_1", value:  67, class: "rect_dem"},
+	  {id: "grp5_2", value:  33, class: "rect_rep"}
 	];
 	
 	control_race("hispanic", data_hispanic,"Hispanic");

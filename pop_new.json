@@ -1,0 +1,717 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"id": 1,
+		"properties": {
+			"name": "Alabama",
+			"population": 4447100,
+			"electoral": 9,
+			"college_white": 25.8,
+			"noncollege_white": 41.1,
+			"black": 27.4,
+			"hispanic": 2.8,
+			"asian_other": 2.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 2,
+		"properties": {
+			"name": "Alaska",
+			"population": 626932,
+			"electoral": 3,
+			"college_white": 25,
+			"noncollege_white": 45.4,
+			"black": 2.6,
+			"hispanic": 10.1,
+			"asian_other": 16.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 4,
+		"properties": {
+			"name": "Arizona",
+			"population": 5130632,
+			"electoral": 11,
+			"college_white": 28.1,
+			"noncollege_white": 39.3,
+			"black": 3.5,
+			"hispanic": 23.5,
+			"asian_other": 5.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 5,
+		"properties": {
+			"name": "Arkansas",
+			"population": 2673400,
+			"electoral": 6,
+			"college_white": 28.1,
+			"noncollege_white": 51.2,
+			"black": 11.6,
+			"hispanic": 4.7,
+			"asian_other": 4.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 6,
+		"properties": {
+			"name": "California",
+			"population": 33871648,
+			"electoral": 55,
+			"college_white": 22.8,
+			"noncollege_white": 24.7,
+			"black": 6.9,
+			"hispanic": 27.7,
+			"asian_other": 18
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 8,
+		"properties": {
+			"name": "Colorado",
+			"population": 4301261,
+			"electoral": 9,
+			"college_white": 32.4,
+			"noncollege_white": 38.1,
+			"black": 2.6,
+			"hispanic": 18.3,
+			"asian_other": 8.7
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 9,
+		"properties": {
+			"name": "Connecticut",
+			"population": 3405565,
+			"electoral": 7,
+			"college_white": 43.5,
+			"noncollege_white": 30.7,
+			"black": 11.8,
+			"hispanic": 9.4,
+			"asian_other": 4.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 10,
+		"properties": {
+			"name": "Delaware",
+			"population": 783600,
+			"electoral": 3,
+			"college_white": 34,
+			"noncollege_white": 38.7,
+			"black": 17.7,
+			"hispanic": 4.9,
+			"asian_other": 4.7
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 11,
+		"properties": {
+			"name": "District of Columbia",
+			"population": 572059,
+			"electoral": 3,
+			"college_white": 32.6,
+			"noncollege_white": 2.3,
+			"black": 53.4,
+			"hispanic": 8.6,
+			"asian_other": 3.1
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 12,
+		"properties": {
+			"name": "Florida",
+			"population": 15982378,
+			"electoral": 29,
+			"college_white": 26.3,
+			"noncollege_white": 33.1,
+			"black": 12.2,
+			"hispanic": 23.1,
+			"asian_other": 5.3
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 13,
+		"properties": {
+			"name": "Georgia",
+			"population": 8186453,
+			"electoral": 16,
+			"college_white": 26.7,
+			"noncollege_white": 34.9,
+			"black": 30.6,
+			"hispanic": 4.4,
+			"asian_other": 3.4
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 15,
+		"properties": {
+			"name": "Hawaii",
+			"population": 1211537,
+			"electoral": 4,
+			"college_white": 15.4,
+			"noncollege_white": 19.2,
+			"black": 1.2,
+			"hispanic": 11.2,
+			"asian_other": 53
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 16,
+		"properties": {
+			"name": "Idaho",
+			"population": 1293953,
+			"electoral": 4,
+			"college_white": 25.6,
+			"noncollege_white": 60.1,
+			"black": 1.3,
+			"hispanic": 8.9,
+			"asian_other": 4
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 17,
+		"properties": {
+			"name": "Illinois",
+			"population": 12419293,
+			"electoral": 20,
+			"college_white": 30.2,
+			"noncollege_white": 34.6,
+			"black": 13.1,
+			"hispanic": 16.4,
+			"asian_other": 5.7
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 18,
+		"properties": {
+			"name": "Indiana",
+			"population": 6080485,
+			"electoral": 11,
+			"college_white": 35.1,
+			"noncollege_white": 45.6,
+			"black": 7.9,
+			"hispanic": 8.4,
+			"asian_other": 3
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 19,
+		"properties": {
+			"name": "Iowa",
+			"population": 2926324,
+			"electoral": 6,
+			"college_white": 35.2,
+			"noncollege_white": 56.4,
+			"black": 2.2,
+			"hispanic": 3,
+			"asian_other": 3.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 20,
+		"properties": {
+			"name": "Kansas",
+			"population": 2688418,
+			"electoral": 6,
+			"college_white": 36.1,
+			"noncollege_white": 47.5,
+			"black": 4.9,
+			"hispanic": 7.2,
+			"asian_other": 4.3
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 21,
+		"properties": {
+			"name": "Kentucky",
+			"population": 4041769,
+			"electoral": 8,
+			"college_white": 28.7,
+			"noncollege_white": 54,
+			"black": 10.7,
+			"hispanic": 3.4,
+			"asian_other": 3.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 22,
+		"properties": {
+			"name": "Louisiana",
+			"population": 4468976,
+			"electoral": 8,
+			"college_white": 24.9,
+			"noncollege_white": 38.4,
+			"black": 28.4,
+			"hispanic": 6.8,
+			"asian_other": 1.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 23,
+		"properties": {
+			"name": "Maine",
+			"population": 1274923,
+			"electoral": 4,
+			"college_white": 41.9,
+			"noncollege_white": 52.3,
+			"black": 1.4,
+			"hispanic": 1.6,
+			"asian_other": 2.8
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 24,
+		"properties": {
+			"name": "Maryland",
+			"population": 5296486,
+			"electoral": 10,
+			"college_white": 30.3,
+			"noncollege_white": 22.9,
+			"black": 27.7,
+			"hispanic": 10.6,
+			"asian_other": 8.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 25,
+		"properties": {
+			"name": "Massachusetts",
+			"population": 6349097,
+			"electoral": 11,
+			"college_white": 49.3,
+			"noncollege_white": 33.1,
+			"black": 6.4,
+			"hispanic": 6.4,
+			"asian_other": 4.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 26,
+		"properties": {
+			"name": "Michigan",
+			"population": 9938444,
+			"electoral": 16,
+			"college_white": 33.5,
+			"noncollege_white": 41.2,
+			"black": 15.1,
+			"hispanic": 4.3,
+			"asian_other": 6
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 27,
+		"properties": {
+			"name": "Minnesota",
+			"population": 4919479,
+			"electoral": 10,
+			"college_white": 36.5,
+			"noncollege_white": 45.5,
+			"black": 6.6,
+			"hispanic": 4.2,
+			"asian_other": 7.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 28,
+		"properties": {
+			"name": "Mississippi",
+			"population": 2844658,
+			"electoral": 6,
+			"college_white": 20.7,
+			"noncollege_white": 38.7,
+			"black": 35.1,
+			"hispanic": 4,
+			"asian_other": 1.4
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 29,
+		"properties": {
+			"name": "Missouri",
+			"population": 5595211,
+			"electoral": 10,
+			"college_white": 27.6,
+			"noncollege_white": 48.1,
+			"black": 15.8,
+			"hispanic": 4.3,
+			"asian_other": 4.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 30,
+		"properties": {
+			"name": "Montana",
+			"population": 902195,
+			"electoral": 3,
+			"college_white": 31.6,
+			"noncollege_white": 52.8,
+			"black": 2,
+			"hispanic": 6,
+			"asian_other": 7.6
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 31,
+		"properties": {
+			"name": "Nebraska",
+			"population": 1711263,
+			"electoral": 5,
+			"college_white": 35.4,
+			"noncollege_white": 53.8,
+			"black": 4.4,
+			"hispanic": 3.3,
+			"asian_other": 3.1
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 32,
+		"properties": {
+			"name": "Nevada",
+			"population": 1998257,
+			"electoral": 6,
+			"college_white": 21.6,
+			"noncollege_white": 33.8,
+			"black": 8.5,
+			"hispanic": 24.3,
+			"asian_other": 11.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 33,
+		"properties": {
+			"name": "New Hampshire",
+			"population": 1235786,
+			"electoral": 4,
+			"college_white": 41.1,
+			"noncollege_white": 49,
+			"black": 2.2,
+			"hispanic": 4.5,
+			"asian_other": 3.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 34,
+		"properties": {
+			"name": "New Jersey",
+			"population": 8414350,
+			"electoral": 14,
+			"college_white": 27.4,
+			"noncollege_white": 33.9,
+			"black": 17.4,
+			"hispanic": 14.3,
+			"asian_other": 6.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 35,
+		"properties": {
+			"name": "New Mexico",
+			"population": 1819046,
+			"electoral": 5,
+			"college_white": 17.7,
+			"noncollege_white": 23.6,
+			"black": 1.7,
+			"hispanic": 44.1,
+			"asian_other": 12.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 36,
+		"properties": {
+			"name": "New York",
+			"population": 18976457,
+			"electoral": 29,
+			"college_white": 31.6,
+			"noncollege_white": 30.5,
+			"black": 15.4,
+			"hispanic": 18.1,
+			"asian_other": 4.3
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 37,
+		"properties": {
+			"name": "North Carolina",
+			"population": 8049313,
+			"electoral": 15,
+			"college_white": 29,
+			"noncollege_white": 38.5,
+			"black": 22.5,
+			"hispanic": 5.7,
+			"asian_other": 4.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 38,
+		"properties": {
+			"name": "North Dakota",
+			"population": 642200,
+			"electoral": 3,
+			"college_white": 35.9,
+			"noncollege_white": 51.8,
+			"black": 2.1,
+			"hispanic": 4.2,
+			"asian_other": 6
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 39,
+		"properties": {
+			"name": "Ohio",
+			"population": 11353140,
+			"electoral": 18,
+			"college_white": 30.2,
+			"noncollege_white": 46.3,
+			"black": 14.5,
+			"hispanic": 4.5,
+			"asian_other": 4.6
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 40,
+		"properties": {
+			"name": "Oklahoma",
+			"population": 3450654,
+			"electoral": 7,
+			"college_white": 27.1,
+			"noncollege_white": 50.4,
+			"black": 6.9,
+			"hispanic": 4.7,
+			"asian_other": 10.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 41,
+		"properties": {
+			"name": "Oregon",
+			"population": 3421399,
+			"electoral": 7,
+			"college_white": 36.7,
+			"noncollege_white": 46.9,
+			"black": 1,
+			"hispanic": 5.6,
+			"asian_other": 9.8
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 42,
+		"properties": {
+			"name": "Pennsylvania",
+			"population": 12281054,
+			"electoral": 20,
+			"college_white": 36.5,
+			"noncollege_white": 38,
+			"black": 13.1,
+			"hispanic": 9.3,
+			"asian_other": 3.1
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 44,
+		"properties": {
+			"name": "Rhode Island",
+			"population": 1048319,
+			"electoral": 4,
+			"college_white": 33.1,
+			"noncollege_white": 43.1,
+			"black": 7,
+			"hispanic": 11.3,
+			"asian_other": 5.6
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 45,
+		"properties": {
+			"name": "South Carolina",
+			"population": 4012012,
+			"electoral": 9,
+			"college_white": 31.2,
+			"noncollege_white": 38.7,
+			"black": 23.7,
+			"hispanic": 4.6,
+			"asian_other": 1.8
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 46,
+		"properties": {
+			"name": "South Dakota",
+			"population": 754844,
+			"electoral": 3,
+			"college_white": 34.4,
+			"noncollege_white": 49,
+			"black": 1.4,
+			"hispanic": 5.7,
+			"asian_other": 9.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 47,
+		"properties": {
+			"name": "Tennessee",
+			"population": 5689283,
+			"electoral": 11,
+			"college_white": 31.3,
+			"noncollege_white": 49.2,
+			"black": 11.4,
+			"hispanic": 3.1,
+			"asian_other": 5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 48,
+		"properties": {
+			"name": "Texas",
+			"population": 20851820,
+			"electoral": 38,
+			"college_white": 26.7,
+			"noncollege_white": 27.8,
+			"black": 12.3,
+			"hispanic": 27.1,
+			"asian_other": 6.1
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 49,
+		"properties": {
+			"name": "Utah",
+			"population": 2233169,
+			"electoral": 6,
+			"college_white": 33.6,
+			"noncollege_white": 52.1,
+			"black": 1.2,
+			"hispanic": 7.2,
+			"asian_other": 5.9
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 50,
+		"properties": {
+			"name": "Vermont",
+			"population": 608827,
+			"electoral": 3,
+			"college_white": 41.9,
+			"noncollege_white": 48.6,
+			"black": 0.9,
+			"hispanic": 3.2,
+			"asian_other": 5.4
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 51,
+		"properties": {
+			"name": "Virginia",
+			"population": 7078515,
+			"electoral": 13,
+			"college_white": 35.1,
+			"noncollege_white": 30.6,
+			"black": 19.4,
+			"hispanic": 7.3,
+			"asian_other": 7.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 53,
+		"properties": {
+			"name": "Washington",
+			"population": 5894121,
+			"electoral": 12,
+			"college_white": 29.4,
+			"noncollege_white": 39,
+			"black": 2.7,
+			"hispanic": 13.7,
+			"asian_other": 15.2
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 54,
+		"properties": {
+			"name": "West Virginia",
+			"population": 1808344,
+			"electoral": 5,
+			"college_white": 28.4,
+			"noncollege_white": 62.3,
+			"black": 2.2,
+			"hispanic": 4.5,
+			"asian_other": 2.5
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 55,
+		"properties": {
+			"name": "Wisconsin",
+			"population": 5363675,
+			"electoral": 10,
+			"college_white": 32.5,
+			"noncollege_white": 50.7,
+			"black": 6.8,
+			"hispanic": 5.7,
+			"asian_other": 4.3
+		}
+	},
+	{
+		"type": "Feature",
+		"id": 56,
+		"properties": {
+			"name": "Wyoming",
+			"population": 493782,
+			"electoral": 3,
+			"college_white": 33.3,
+			"noncollege_white": 53.4,
+			"black": 1.4,
+			"hispanic": 7.7,
+			"asian_other": 4.2
+		}
+	}]
+}
