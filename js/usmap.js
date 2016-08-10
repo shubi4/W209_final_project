@@ -132,7 +132,7 @@ var USMapModule = (function() {
                 append("tspan")
                 .attr("class", "state_stat_hdr")
                 .text(function(d) {
-                            max_pop = d.properties.population;
+                            max_pop = d.properties.dem_votes + d.properties.repub_votes;
                             return d.properties.name;
                         })
                 .attr("x", state_stat_off)
