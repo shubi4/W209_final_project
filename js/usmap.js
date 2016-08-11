@@ -1,8 +1,12 @@
 var USMapModule = (function() {
     var percent_vote_repub = {hispanic:29, black:7, wht_col:56, wht_non_col:62, asn_othr:67 };
     var percent_vote_dem = {hispanic:71, black:93, wht_col:44, wht_non_col:38, asn_othr:33 };
+    //var percent_vote_repub = {hispanic:50, black:50, wht_col:50, wht_non_col:50, asn_othr:50 };
+    //var percent_vote_dem = {hispanic:50, black:50, wht_col:50, wht_non_col:50, asn_othr:50 };
+    
     //average historic voter turnout (1980-2012) is used for 2016
-    var percent_voter_turnout = {hispanic:47.8, black:58.9, wht_col:65.2, wht_non_col:65.2, asn_othr:46.9 };
+    //var percent_voter_turnout = {hispanic:47.8, black:58.9, wht_col:65.2, wht_non_col:65.2, asn_othr:46.9 };
+    var percent_voter_turnout = {hispanic:100, black:100, wht_col:100, wht_non_col:100, asn_othr:100 };
     
     var elvoteobj_cached = null;
     var centerobj_cached = null;
@@ -11,10 +15,10 @@ var USMapModule = (function() {
         vmargin = 10;
     var map_width = 900,
         map_height = 500;
-    var state_width = 350,
-        state_height = 300;
-    var state_bar_width = 330,
-        state_bar_height = 400; 
+    var state_width = 420,
+        state_height = 320;
+    var state_bar_width = 350,
+        state_bar_height = 220; 
     var circscale = d3.scale.sqrt()
                     .domain([0, map_height])
                     .range([0, 30]);
@@ -141,7 +145,7 @@ var USMapModule = (function() {
                 append("tspan")
                 .attr("class", "state_stat_stats")
                 .text(function(d) {
-                            return "Democratic Pop Vote: " + format_millions(d.properties.dem_votes);
+                            return "Population: " + format_millions(d.properties.population);
                         })
                 .attr("x", state_stat_off)
                 .attr("y", compute_stat_height(2));
@@ -149,44 +153,83 @@ var USMapModule = (function() {
                 append("tspan")
                 .attr("class", "state_stat_stats")
                 .text(function(d) {
-                            return "Republican Pop Vote: " + format_millions(d.properties.repub_votes);
+                            return "College educated white: " + d.properties.college_white + "%";
                         })
                 .attr("x", state_stat_off)
-                .attr("y", compute_stat_height(3));
+                .attr("y", compute_stat_height(3));	
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            return "Non-College educated white: " + d.properties.noncollege_white + "%";
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(4));	
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            return "African American: " + d.properties.black + "%";
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(5));	
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            return "Hispanic: " + d.properties.hispanic + "%";
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(6));	
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            return "Asian/other: " + d.properties.asian_other + "%";
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(7));	
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            winner = ""
+                            if (d.properties.dem_votes > d.properties.repub_votes) {
+                                winner = " (WINNER)"
+                            }
+                            return "Democratic Vote: " + format_millions(d.properties.dem_votes) + winner;
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(8));
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            winner = ""
+                            if (d.properties.repub_votes > d.properties.dem_votes) {
+                                winner = " (WINNER)"
+                            }
+                            return "Republican Vote: " + format_millions(d.properties.repub_votes) + winner;
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(9));
+            state_text.
+                append("tspan")
+                .attr("class", "state_stat_stats")
+                .text(function(d) {
+                            return "Electoral Seats: " + d.properties.electoral;
+                        })
+                .attr("x", state_stat_off)
+                .attr("y", compute_stat_height(10));
 
-            state_text.
-                append("tspan")
-                .attr("class", "state_stat_stats")
-                .text(function(d) {
-                            if (d.properties.dem_votes > d.properties.repub_votes) {
-                                return "EC Votes awarded to: Democrats";
-                                d3.selectAll
-                            } else {
-                                return "EC Votes awarded to: Republicans";
-                            }
-                        })
-                .attr("x", state_stat_off)
-                .attr("y", compute_stat_height(4));
-            state_text.
-                append("tspan")
-                .attr("class", "state_stat_stats")
-                .text(function(d) {
-                            if (d.properties.dem_votes > d.properties.repub_votes) {
-                                return "State Winner: Hillary Clinton";
-                            } else {
-                                return "State Winner: Donald Trump";
-                            }
-                        })
-                .attr("x", state_stat_off)
-                .attr("y", compute_stat_height(5));
-            state_text.
-                append("tspan")
-                .attr("class", "state_stat_stats")
-                .text(function(d) {
-                            return "EC Votes awarded: " + d.properties.electoral;
-                        })
-                .attr("x", state_stat_off)
-                .attr("y", compute_stat_height(6));		
+
+            
+            
+            	
+        
+            
+           
+            
             /*console.log(stateobj.id); */
             var yScale = d3.scale.linear()
                     .domain([0, max_pop])
@@ -243,6 +286,20 @@ var USMapModule = (function() {
 
         }
     
+    
+    function updateTally(dem_tally, repub_tally) {
+        d3.select("#dem_tally").text(dem_tally);
+        d3.select("#repub_tally").text(repub_tally);
+        if(dem_tally > repub_tally) {
+            d3.select("#dem_winner").style("opacity", 1);;
+            d3.select("#repub_winner").style("opacity", 0);;
+        }
+        else if(repub_tally > dem_tally){
+            d3.select("#dem_winner").style("opacity", 0);;
+            d3.select("#repub_winner").style("opacity", 1);;
+        }
+        
+    }
     function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
         if (error) throw error;
 
@@ -260,7 +317,7 @@ var USMapModule = (function() {
                         elvoteobjprops = elvoteobj.features[j].properties;
                     
                         centerobjprops.elvotes = labelobjprops.elvotes = Number(elvoteobjprops.electoral);
-                        compute_popular_vote(elvoteobjprops);
+                        //compute_popular_vote(elvoteobjprops);
                         centerobjprops.repub_votes = elvoteobjprops.repub_votes = Math.round(elvoteobjprops.repub_votes);
                         centerobjprops.dem_votes = elvoteobjprops.dem_votes = Math.round(elvoteobjprops.dem_votes);
                         
@@ -278,9 +335,8 @@ var USMapModule = (function() {
                 }
             }
         }
-        d3.select("#dem_tally").text(dem_tally);
-        d3.select("#repub_tally").text(repub_tally);
-        
+        updateTally(dem_tally, repub_tally);
+                
         map_svg
             .selectAll("path")
             .data(topojson.feature(usobj, usobj.objects.states).features)
@@ -435,15 +491,14 @@ var USMapModule = (function() {
                 //                    + elvoteobjprops.dem_votes + "," + elvoteobjprops.repub_votes);
             }
             
-            d3.select("#dem_tally").text(dem_tally);
-            d3.select("#repub_tally").text(repub_tally);
+            updateTally(dem_tally, repub_tally);
             
             map_svg
             .selectAll(".circle")
             .data(centerobj_cached.features)
             .transition()
-            .delay(750)
-            .duration(3000)
+            .delay(1000)
+            .duration(5000)
             .attr("class", function(d) { if (d.properties.dem_votes > d.properties.repub_votes) {
                                             return "circle dem_circle";
                                         } 
@@ -456,7 +511,26 @@ var USMapModule = (function() {
                                     });
 
                 
-        }//end function updateVotePct
+        },//end function updateVotePct
+        
+        clearStateStats :   function ()
+        {
+            state_svg
+                .selectAll(".ststats")
+                .remove();
+            state_bar_svg
+                .selectAll(".stbar_title")
+                .remove();
+            state_bar_svg
+                .selectAll(".stbar")
+                .remove();
+            map_svg.selectAll("path")
+                .classed("distinct", false)
+                .classed("selected", false);
+            map_svg.selectAll("text")
+                .classed("distinct", false)
+                .classed("selected", false);
+        }
     }
 }())//end USMapModule
 

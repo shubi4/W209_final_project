@@ -11,7 +11,9 @@
 			"noncollege_white": 41.1,
 			"black": 27.4,
 			"hispanic": 2.8,
-			"asian_other": 2.9
+			"asian_other": 2.9,
+			"dem_votes": 795696,
+			"repub_votes": 1255925
 		}
 	},
 	{
@@ -25,7 +27,9 @@
 			"noncollege_white": 45.4,
 			"black": 2.6,
 			"hispanic": 10.1,
-			"asian_other": 16.9
+			"asian_other": 16.9,
+			"dem_votes": 122640,
+			"repub_votes": 164676
 		}
 	},
 	{
@@ -39,7 +43,9 @@
 			"noncollege_white": 39.3,
 			"black": 3.5,
 			"hispanic": 23.5,
-			"asian_other": 5.5
+			"asian_other": 5.5,
+			"dem_votes": 1025232,
+			"repub_votes": 1233654
 		}
 	},
 	{
@@ -53,7 +59,9 @@
 			"noncollege_white": 51.2,
 			"black": 11.6,
 			"hispanic": 4.7,
-			"asian_other": 4.5
+			"asian_other": 4.5,
+			"dem_votes": 394409,
+			"repub_votes": 647744
 		}
 	},
 	{
@@ -67,7 +75,9 @@
 			"noncollege_white": 24.7,
 			"black": 6.9,
 			"hispanic": 27.7,
-			"asian_other": 18
+			"asian_other": 18,
+			"dem_votes": 7854285,
+			"repub_votes": 4839958
 		}
 	},
 	{
@@ -81,7 +91,9 @@
 			"noncollege_white": 38.1,
 			"black": 2.6,
 			"hispanic": 18.3,
-			"asian_other": 8.7
+			"asian_other": 8.7,
+			"dem_votes": 1322998,
+			"repub_votes": 1185050
 		}
 	},
 	{
@@ -95,7 +107,9 @@
 			"noncollege_white": 30.7,
 			"black": 11.8,
 			"hispanic": 9.4,
-			"asian_other": 4.5
+			"asian_other": 4.5,
+			"dem_votes": 905083,
+			"repub_votes": 634892
 		}
 	},
 	{
@@ -109,7 +123,9 @@
 			"noncollege_white": 38.7,
 			"black": 17.7,
 			"hispanic": 4.9,
-			"asian_other": 4.7
+			"asian_other": 4.7,
+			"dem_votes": 242584,
+			"repub_votes": 165484
 		}
 	},
 	{
@@ -123,7 +139,9 @@
 			"noncollege_white": 2.3,
 			"black": 53.4,
 			"hispanic": 8.6,
-			"asian_other": 3.1
+			"asian_other": 3.1,
+			"dem_votes": 267070,
+			"repub_votes": 21381
 		}
 	},
 	{
@@ -137,7 +155,9 @@
 			"noncollege_white": 33.1,
 			"black": 12.2,
 			"hispanic": 23.1,
-			"asian_other": 5.3
+			"asian_other": 5.3,
+			"dem_votes": 4237756,
+			"repub_votes": 4163447
 		}
 	},
 	{
@@ -151,7 +171,9 @@
 			"noncollege_white": 34.9,
 			"black": 30.6,
 			"hispanic": 4.4,
-			"asian_other": 3.4
+			"asian_other": 3.4,
+			"dem_votes": 1773827,
+			"repub_votes": 2078688
 		}
 	},
 	{
@@ -165,7 +187,9 @@
 			"noncollege_white": 19.2,
 			"black": 1.2,
 			"hispanic": 11.2,
-			"asian_other": 53
+			"asian_other": 53,
+			"dem_votes": 306658,
+			"repub_votes": 121015
 		}
 	},
 	{
@@ -179,7 +203,9 @@
 			"noncollege_white": 60.1,
 			"black": 1.3,
 			"hispanic": 8.9,
-			"asian_other": 4
+			"asian_other": 4,
+			"dem_votes": 212787,
+			"repub_votes": 420911
 		}
 	},
 	{
@@ -193,7 +219,9 @@
 			"noncollege_white": 34.6,
 			"black": 13.1,
 			"hispanic": 16.4,
-			"asian_other": 5.7
+			"asian_other": 5.7,
+			"dem_votes": 3019512,
+			"repub_votes": 2135216
 		}
 	},
 	{
@@ -207,7 +235,9 @@
 			"noncollege_white": 45.6,
 			"black": 7.9,
 			"hispanic": 8.4,
-			"asian_other": 3
+			"asian_other": 3,
+			"dem_votes": 1152887,
+			"repub_votes": 1420543
 		}
 	},
 	{
@@ -221,7 +251,9 @@
 			"noncollege_white": 56.4,
 			"black": 2.2,
 			"hispanic": 3,
-			"asian_other": 3.2
+			"asian_other": 3.2,
+			"dem_votes": 822544,
+			"repub_votes": 730617
 		}
 	},
 	{
@@ -235,7 +267,9 @@
 			"noncollege_white": 47.5,
 			"black": 4.9,
 			"hispanic": 7.2,
-			"asian_other": 4.3
+			"asian_other": 4.3,
+			"dem_votes": 440726,
+			"repub_votes": 692634
 		}
 	},
 	{
@@ -249,7 +283,9 @@
 			"noncollege_white": 54,
 			"black": 10.7,
 			"hispanic": 3.4,
-			"asian_other": 3.2
+			"asian_other": 3.2,
+			"dem_votes": 679370,
+			"repub_votes": 1087190
 		}
 	},
 	{
@@ -263,7 +299,9 @@
 			"noncollege_white": 38.4,
 			"black": 28.4,
 			"hispanic": 6.8,
-			"asian_other": 1.5
+			"asian_other": 1.5,
+			"dem_votes": 809141,
+			"repub_votes": 1152262
 		}
 	},
 	{
@@ -277,7 +315,9 @@
 			"noncollege_white": 52.3,
 			"black": 1.4,
 			"hispanic": 1.6,
-			"asian_other": 2.8
+			"asian_other": 2.8,
+			"dem_votes": 401306,
+			"repub_votes": 292276
 		}
 	},
 	{
@@ -291,7 +331,9 @@
 			"noncollege_white": 22.9,
 			"black": 27.7,
 			"hispanic": 10.6,
-			"asian_other": 8.5
+			"asian_other": 8.5,
+			"dem_votes": 1677844,
+			"repub_votes": 971869
 		}
 	},
 	{
@@ -305,7 +347,9 @@
 			"noncollege_white": 33.1,
 			"black": 6.4,
 			"hispanic": 6.4,
-			"asian_other": 4.9
+			"asian_other": 4.9,
+			"dem_votes": 1921290,
+			"repub_votes": 1188314
 		}
 	},
 	{
@@ -319,7 +363,9 @@
 			"noncollege_white": 41.2,
 			"black": 15.1,
 			"hispanic": 4.3,
-			"asian_other": 6
+			"asian_other": 6,
+			"dem_votes": 2564569,
+			"repub_votes": 2115256
 		}
 	},
 	{
@@ -333,7 +379,9 @@
 			"noncollege_white": 45.5,
 			"black": 6.6,
 			"hispanic": 4.2,
-			"asian_other": 7.2
+			"asian_other": 7.2,
+			"dem_votes": 1546167,
+			"repub_votes": 1320225
 		}
 	},
 	{
@@ -347,7 +395,9 @@
 			"noncollege_white": 38.7,
 			"black": 35.1,
 			"hispanic": 4,
-			"asian_other": 1.4
+			"asian_other": 1.4,
+			"dem_votes": 562949,
+			"repub_votes": 710746
 		}
 	},
 	{
@@ -361,7 +411,9 @@
 			"noncollege_white": 48.1,
 			"black": 15.8,
 			"hispanic": 4.3,
-			"asian_other": 4.2
+			"asian_other": 4.2,
+			"dem_votes": 1223796,
+			"repub_votes": 1482440
 		}
 	},
 	{
@@ -375,7 +427,9 @@
 			"noncollege_white": 52.8,
 			"black": 2,
 			"hispanic": 6,
-			"asian_other": 7.6
+			"asian_other": 7.6,
+			"dem_votes": 201839,
+			"repub_votes": 267928
 		}
 	},
 	{
@@ -389,7 +443,9 @@
 			"noncollege_white": 53.8,
 			"black": 4.4,
 			"hispanic": 3.3,
-			"asian_other": 3.1
+			"asian_other": 3.1,
+			"dem_votes": 302081,
+			"repub_votes": 475064
 		}
 	},
 	{
@@ -403,7 +459,9 @@
 			"noncollege_white": 33.8,
 			"black": 8.5,
 			"hispanic": 24.3,
-			"asian_other": 11.9
+			"asian_other": 11.9,
+			"dem_votes": 531373,
+			"repub_votes": 463567
 		}
 	},
 	{
@@ -417,7 +475,9 @@
 			"noncollege_white": 49,
 			"black": 2.2,
 			"hispanic": 4.5,
-			"asian_other": 3.2
+			"asian_other": 3.2,
+			"dem_votes": 369561,
+			"repub_votes": 329918
 		}
 	},
 	{
@@ -431,7 +491,9 @@
 			"noncollege_white": 33.9,
 			"black": 17.4,
 			"hispanic": 14.3,
-			"asian_other": 6.9
+			"asian_other": 6.9,
+			"dem_votes": 2122786,
+			"repub_votes": 1478088
 		}
 	},
 	{
@@ -445,7 +507,9 @@
 			"noncollege_white": 23.6,
 			"black": 1.7,
 			"hispanic": 44.1,
-			"asian_other": 12.9
+			"asian_other": 12.9,
+			"dem_votes": 415335,
+			"repub_votes": 335788
 		}
 	},
 	{
@@ -459,7 +523,9 @@
 			"noncollege_white": 30.5,
 			"black": 15.4,
 			"hispanic": 18.1,
-			"asian_other": 4.3
+			"asian_other": 4.3,
+			"dem_votes": 4018385,
+			"repub_votes": 2145628
 		}
 	},
 	{
@@ -473,7 +539,9 @@
 			"noncollege_white": 38.5,
 			"black": 22.5,
 			"hispanic": 5.7,
-			"asian_other": 4.2
+			"asian_other": 4.2,
+			"dem_votes": 2178391,
+			"repub_votes": 2270395
 		}
 	},
 	{
@@ -487,7 +555,9 @@
 			"noncollege_white": 51.8,
 			"black": 2.1,
 			"hispanic": 4.2,
-			"asian_other": 6
+			"asian_other": 6,
+			"dem_votes": 124966,
+			"repub_votes": 188320
 		}
 	},
 	{
@@ -501,7 +571,9 @@
 			"noncollege_white": 46.3,
 			"black": 14.5,
 			"hispanic": 4.5,
-			"asian_other": 4.6
+			"asian_other": 4.6,
+			"dem_votes": 2827621,
+			"repub_votes": 2661407
 		}
 	},
 	{
@@ -515,7 +587,9 @@
 			"noncollege_white": 50.4,
 			"black": 6.9,
 			"hispanic": 4.7,
-			"asian_other": 10.9
+			"asian_other": 10.9,
+			"dem_votes": 443547,
+			"repub_votes": 891325
 		}
 	},
 	{
@@ -529,7 +603,9 @@
 			"noncollege_white": 46.9,
 			"black": 1,
 			"hispanic": 5.6,
-			"asian_other": 9.8
+			"asian_other": 9.8,
+			"dem_votes": 970488,
+			"repub_votes": 754175
 		}
 	},
 	{
@@ -543,7 +619,9 @@
 			"noncollege_white": 38,
 			"black": 13.1,
 			"hispanic": 9.3,
-			"asian_other": 3.1
+			"asian_other": 3.1,
+			"dem_votes": 2990274,
+			"repub_votes": 2680434
 		}
 	},
 	{
@@ -557,7 +635,9 @@
 			"noncollege_white": 43.1,
 			"black": 7,
 			"hispanic": 11.3,
-			"asian_other": 5.6
+			"asian_other": 5.6,
+			"dem_votes": 279677,
+			"repub_votes": 157204
 		}
 	},
 	{
@@ -571,7 +651,9 @@
 			"noncollege_white": 38.7,
 			"black": 23.7,
 			"hispanic": 4.6,
-			"asian_other": 1.8
+			"asian_other": 1.8,
+			"dem_votes": 865941,
+			"repub_votes": 1071645
 		}
 	},
 	{
@@ -585,7 +667,9 @@
 			"noncollege_white": 49,
 			"black": 1.4,
 			"hispanic": 5.7,
-			"asian_other": 9.5
+			"asian_other": 9.5,
+			"dem_votes": 145039,
+			"repub_votes": 210610
 		}
 	},
 	{
@@ -599,7 +683,9 @@
 			"noncollege_white": 49.2,
 			"black": 11.4,
 			"hispanic": 3.1,
-			"asian_other": 5
+			"asian_other": 5,
+			"dem_votes": 960709,
+			"repub_votes": 1462330
 		}
 	},
 	{
@@ -613,7 +699,9 @@
 			"noncollege_white": 27.8,
 			"black": 12.3,
 			"hispanic": 27.1,
-			"asian_other": 6.1
+			"asian_other": 6.1,
+			"dem_votes": 3308124,
+			"repub_votes": 4569843
 		}
 	},
 	{
@@ -627,7 +715,9 @@
 			"noncollege_white": 52.1,
 			"black": 1.2,
 			"hispanic": 7.2,
-			"asian_other": 5.9
+			"asian_other": 5.9,
+			"dem_votes": 251813,
+			"repub_votes": 740600
 		}
 	},
 	{
@@ -641,7 +731,9 @@
 			"noncollege_white": 48.6,
 			"black": 0.9,
 			"hispanic": 3.2,
-			"asian_other": 5.4
+			"asian_other": 5.4,
+			"dem_votes": 199239,
+			"repub_votes": 92698
 		}
 	},
 	{
@@ -655,7 +747,9 @@
 			"noncollege_white": 30.6,
 			"black": 19.4,
 			"hispanic": 7.3,
-			"asian_other": 7.5
+			"asian_other": 7.5,
+			"dem_votes": 1971820,
+			"repub_votes": 1822522
 		}
 	},
 	{
@@ -669,7 +763,9 @@
 			"noncollege_white": 39,
 			"black": 2.7,
 			"hispanic": 13.7,
-			"asian_other": 15.2
+			"asian_other": 15.2,
+			"dem_votes": 1755396,
+			"repub_votes": 1290670
 		}
 	},
 	{
@@ -683,7 +779,9 @@
 			"noncollege_white": 62.3,
 			"black": 2.2,
 			"hispanic": 4.5,
-			"asian_other": 2.5
+			"asian_other": 2.5,
+			"dem_votes": 238230,
+			"repub_votes": 417584
 		}
 	},
 	{
@@ -697,7 +795,9 @@
 			"noncollege_white": 50.7,
 			"black": 6.8,
 			"hispanic": 5.7,
-			"asian_other": 4.3
+			"asian_other": 4.3,
+			"dem_votes": 1620985,
+			"repub_votes": 1407966
 		}
 	},
 	{
@@ -711,7 +811,9 @@
 			"noncollege_white": 53.4,
 			"black": 1.4,
 			"hispanic": 7.7,
-			"asian_other": 4.2
+			"asian_other": 4.2,
+			"dem_votes": 69286,
+			"repub_votes": 170962
 		}
 	}]
 }

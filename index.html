@@ -224,7 +224,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h2>Predict 2016</h2>
+                    <h2>Predict the 2016 election</h2>
                     <hr class="small">
                     <p class="lead">Click on the '+' signs next to the different racial groups to change their voting preference. 
                         <br/>
@@ -237,52 +237,93 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-8" id="map_div">
-                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" style="font-weight:bold">Democrat</p></div>
+                        <div class="col-md-2"><span id="dem_winner" class="glyphicon glyphicon-ok" /></div>
 
-                <div class="col-md-2" id="controls_div_1">
-                    <div class="row" id="hispanic" ></div>
-                    <div class="row" id="college" ></div>
-                    <div class="row" id="asian" ></div>
+                    </div>
                 </div>
-                <div class="col-md-2" id="controls_div_2">	
-                    <div class="row" id="afro"  ></div>
-                    <div class="row" id="no_college" ></div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" style="font-weight:bold">Republican</p></div>
+                        <div class="col-md-2"><span id= "repub_winner" class="glyphicon glyphicon-ok" /></div>
+                    </div>
                 </div>
-
+                
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <img class="img-responsive"src="img/clinton.jpg" alt="clinton" class="pull-left" width="60" height="60">
+                </div>                        
+               
+                <div class="col-md-2">
+                    <svg >
+                    <g transform="translate(40,40)">
+                        <circle r="40" stroke="steelblue" fill="steelblue"></circle>
+                        <text id="dem_tally" dx="-20" class="state_stat_hdr text-vertical-center"></text>
+                    </g>
+                    </svg>
+                    
+                </div>
+                <div class="col-md-1">
+                    <img class="img-responsive" src="img/trump.jpg" alt="trump" class="pull-right" width="60" height="60">
+                </div>
+                <div class="col-md-2">
+                    <svg >
+                        <g transform="translate(40,40)">
+                            <circle r="40" stroke="indianred" fill="indianred"></circle>
+                            <text id="repub_tally" dx="-20" class="state_stat_hdr text-vertical-center"></text>
+                        </g>
+                    </svg>
+                </div>
+                <!--<div class="col-md-2" style="background-color:steelblue">
+                    <p style="font-weight:bold" id="repub_tally" class="state_stat_hdr text-vertical-center"></p>
+                </div>-->
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4" id="tally_div">
-                    <div class="row">
-                    <p class="state_stat_hdr" style="font-weight:bold">Electoral College Tally</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img class="img-circle img-responsive" src="img/clinton.jpg" alt="clinton" class="pull-left">
-                        </div>
-                        <div class="col-md-8">
-                            <p style="font-weight:bold" id="dem_tally" class="state_stat_hdr text-vertical-center"></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img class="img-circle img-responsive" src="img/trump.jpg" alt="trump" class="pull-left">
-                        </div>
-                        <div class="col-md-8">
-                            <p style="font-weight:bold" id="repub_tally" class="state_stat_hdr text-vertical-center"></p>
-                        </div>
-                    </div>
-                </div>                
-                <div class="col-md-4" id="state_div">
+                <div class="col-md-8" id="map_div">
                 </div>
-                <div class="col-md-4" id="state_bar_div">
+                <div class="col-md-4">
+                    <div class="row" id="state_div">
+                    </div>
+                    <div class="row" id="state_bar_div">
+                    </div>
                 </div>
-
-            </div>                    
+            </div>
         </div>
-        <!-- /.container -->
+        
+        
+        <div class="container-fluid">
+            <div class="col-md-2"  >
+                <div class="row">
+                    <div class="col-md-10" id="hispanic"></div>
+                </div>
+            </div>
+            <div class="col-md-2"  >
+                <div class="row">
+                    <div class="col-md-10" id="college"></div>
+                </div>
+            </div>
+            <div class="col-md-2"  >
+                <div class="row">
+                    <div class="col-md-10" id="asian"></div>
+                </div>
+            </div>
+            <div class="col-md-2"  >
+                <div class="row">
+                    <div class="col-md-10" id="afro"></div>
+                </div>
+            </div>
+            <div class="col-md-2"  >
+                <div class="row">
+                    <div class="col-md-10" id="no_college"></div>
+                </div>
+            </div>
+        </div>
+       
     </section>
 
     <section id="past" class="past">

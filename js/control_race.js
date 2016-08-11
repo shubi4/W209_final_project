@@ -1,11 +1,12 @@
 function control_race(id_div, data, title){
 
-	var width = 350,
+	var width = 200,
 		height = 200,
 		barHeight = 30;
 
-	var x = d3.scale.linear()
-		.range([0, width]);
+	var xScale = d3.scale.linear()
+                .domain([0, 100])
+		        .range([0, 100]);
 
 	var object_div = d3.select("#" + id_div);
 	var ctrlrace = object_div.append("svg")
@@ -33,18 +34,18 @@ function control_race(id_div, data, title){
 					if (data[i].value > 99){
 						data[i].value = 99;
 					}
-					d3.select('#bar_'+myId).attr("width", function(d) { return d.value * 2;})
-					d3.select('#txt_'+myId).attr("x", function(d) { return d.value * 2 + 60; })
-					d3.select('#txt_'+myId).text(function(d) { return d.value + "%"; });
+					d3.select('#bar_'+myId).attr("width", function(d) { return xScale(d.value);})
+					d3.select('#txt_'+myId).attr("x", function(d) { return xScale(d.value) + 60; })
+					d3.select('#txt_'+myId).text(function(d) { return xScale(d.value) + "%"; });
 				}
 				else if((data[i].id == otherId) && (data[i].value > 1)){
 					data[i].value-=step;
 					if (data[i].value < 1){
 						data[i].value = 1;
 					}
-					d3.select('#bar_'+otherId).attr("width", function(d) { return d.value * 2; })
-					d3.select('#txt_'+otherId).attr("x", function(d) { return d.value * 2 + 60; })
-					d3.select('#txt_'+otherId).text(function(d) { return d.value + "%"; });
+					d3.select('#bar_'+otherId).attr("width", function(d) { return xScale(d.value); })
+					d3.select('#txt_'+otherId).attr("x", function(d) { return xScale(d.value) + 60; })
+					d3.select('#txt_'+otherId).text(function(d) { return xScale(d.value) + "%"; });
 				}
 		   
 			}
@@ -52,7 +53,8 @@ function control_race(id_div, data, title){
 		}
 	}
 
-  x.domain([0, d3.max(data, function(d) { return d.value; })]);
+   xScale;
+  //xScale.domain([0, d3.max(data, function(d) { return d.value; })]);
 
   ctrlrace.attr("height", height);
   ctrlrace.append("line")
@@ -73,6 +75,8 @@ function control_race(id_div, data, title){
   var reactivityId = null;  
 	
 	function startAuto(d){
+        //deselect state and clear state statistics
+        USMapModule.clearStateStats();
 		addValue(d, d.id, 1);
 		reactivityId = setTimeout(function(){
 			loopId = setInterval(function(){addValue(d, d.id, 1);}, 100);
@@ -137,16 +141,16 @@ function control_race(id_div, data, title){
 	  .attr("id",function(d) { return 'bar_'+ d.id; })
 	  .attr("x", 28)
 	  .attr("y", 10)
-      .attr("width", function(d) { return d.value * 2; })
+      .attr("width", function(d) { return xScale(d.value); })
       .attr("height", barHeight - 5);
     
   bar.append("text")
 	  .attr("id",function(d) { return 'txt_'+ d.id; })
-      .attr("x", function(d) { return d.value * 2 + 60; })
+      .attr("x", function(d) { return xScale(d.value)+ 60; })
       .attr("y", 10 + barHeight / 2)
       .attr("dy", ".35em")
 	  .attr("class","ctrl_text")
-      .text(function(d) { return d.value + "%"; });
+      .text(function(d) { return xScale(d.value) + "%"; });
   
 	  
 	function type(d) {

@@ -44,6 +44,10 @@ footer{
     font-weight: 700;
 }
 
+.glyphicon {
+    font-size: 30px;
+}
+
 /* Custom Button Styles */
 
 .btn-dark {
