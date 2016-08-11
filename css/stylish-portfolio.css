@@ -81,6 +81,9 @@ footer{
 hr.small {
     max-width: 100px;
 }
+hr.style2 {
+	border-top: 3px double #8c8b8b;
+}
 
 /* Side Menu */
 

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>2016 US Presidential Elections</title>
+    <title>2016 US Elections</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -182,16 +182,13 @@
                 <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>The Project</a>
-            </li>
-            <li>
                 <a href="#predict" onclick=$("#menu-close").click();>Predict 2016</a>
             </li>
             <li>
                 <a href="#past" onclick=$("#menu-close").click();>Past Results</a>
             </li>
             <li>
-                <a href="#footer" onclick=$("#menu-close").click();>Contact</a>
+                <a href="#footer" onclick=$("#menu-close").click();>About</a>
             </li>
         </ul>
     </nav>
@@ -200,37 +197,14 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>2016 US Presidential Elections</h1>
-            <h2>MIDS W209 Final Project - Summmer 2016</h2>
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <br/>
+            <h2>MIDS Final Project Summer 2016</h2>
+            <br/>
+            <a href="#predict" class="btn btn-dark btn-lg">Explore</a>
         </div>
     </header>
 
-    <!-- The Project -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="text-center">Explore past results and Create your own predictions for the 2016 Elections</h2>
-                    <br/>
-                    <p class="lead">
-                    2016 is election year! In November, the presidential candidates will face off in what is shaping up to be a highly contentious and polarized race. More than ever, the electorate looks divided along racial lines. 
-                    <br/>
-                    <br/>
-                        This project aims to visualize the impact of various racial and demographic groups on the 2016 election results. The electorate has been divided into 5 main groups: Hispanic, African American, Asian and other, College educated whites, non-college-educated whites.  To read more about why we chose these groups click <a href="http://fivethirtyeight.com/features/how-demographics-will-shape-the-2016-election/" target="_blank">here</a>.
-                    <br/>
-                    <br />
-                        We start you off with data from the 2012 election results, showing which states voted Democrat and which states Republican. From there, you can adjust the percentages of voters in each racial group  that will vote Democrat or Republican, and watch how that impacts the 2016 results. The size of the circles drawn on each state is  proportional to the number of <a href="https://en.wikipedia.org/wiki/Electoral_College_(United_States)" target="_blank">Electoral College</a> votes for that state. The color indicates which party wins the state. 
-                    <br/>
-                    <br/>
-                    To view past election results click <a href="#past">here</a>
-                    </p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
+    
 
 
     <!-- Predict -->
@@ -238,29 +212,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h2>Predict the 2016 election</h2>
-                    <hr class="small">
-                    <p class="lead">Click on the '+' signs next to the different racial groups to change their voting preference. 
-                        <br/>
-                        Click on a state to see its statistics.   
-                        <br/>
-                        <br/>
-                    </p>
+                    <h1>Predict the 2016 election</h1>
+                    <hr class="small style2">
+                    <br/>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="row">
-                        <div class="col-md-6" ><p class="state_stat_hdr text-left" style="font-weight:bold">Democrat</p></div>
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" >Democrat</p></div>
                         <div class="col-md-2"><span id="dem_winner" class="glyphicon glyphicon-ok" /></div>
 
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
                     <div class="row">
-                        <div class="col-md-6" ><p class="state_stat_hdr text-left" style="font-weight:bold">Republican</p></div>
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" >Republican</p></div>
                         <div class="col-md-2"><span id= "repub_winner" class="glyphicon glyphicon-ok" /></div>
                     </div>
                 </div>
@@ -268,33 +238,31 @@
             </div>
             <div class="row">
                 <div class="col-md-1">
-                    <img class="img-responsive"src="img/clinton.jpg" alt="clinton" class="pull-left" width="60" height="60">
-                </div>                        
-               
-                <div class="col-md-2">
-                    <svg >
-                    <g transform="translate(40,40)">
-                        <circle r="40" stroke="steelblue" fill="steelblue"></circle>
-                        <text id="dem_tally" dx="-20" class="state_stat_hdr text-vertical-center"></text>
-                    </g>
+                    <img class="img-responsive"src="img/clinton.jpg" alt="clinton" class="pull-left" width="50" height="50">
+                </div>     
+                 <div class="col-md-1">
+                    <svg width="100" height="50">
+                        <rect width="100" height="50" stroke="steelblue" fill="steelblue" ></rect>
+                        <text id="dem_tally" dx="20" dy="30" class="state_stat_hdr "></text>
                     </svg>
-                    
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <img class="img-responsive" src="img/trump.jpg" alt="trump" class="pull-right" width="50" height="50">
                 </div>
                 <div class="col-md-1">
-                    <img class="img-responsive" src="img/trump.jpg" alt="trump" class="pull-right" width="60" height="60">
-                </div>
-                <div class="col-md-2">
-                    <svg >
-                        <g transform="translate(40,40)">
-                            <circle r="40" stroke="indianred" fill="indianred"></circle>
-                            <text id="repub_tally" dx="-20" class="state_stat_hdr text-vertical-center"></text>
-                        </g>
+                    <svg width="100" height="50">
+                        <rect width="100" height="50" stroke="indianred" fill="indianred" ></rect>
+                        <text id="repub_tally" dx="20" dy="30" class="state_stat_hdr "></text>
                     </svg>
                 </div>
                 <!--<div class="col-md-2" style="background-color:steelblue">
                     <p style="font-weight:bold" id="repub_tally" class="state_stat_hdr text-vertical-center"></p>
                 </div>-->
             </div>
+        </div>
+        <div class="container">
+        <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -309,13 +277,10 @@
             </div>
         </div>
         
-        
+        <div class="container">
+        <p class="lead text-center" style="font-weight:bold" >Change the percentage of votes for every race group<hr class="style2" width="500px"/></p>
+        </div>
         <div class="container-fluid">
-            <div class="col-md-2"  >
-                <div class="row">
-                    <div class="col-md-10" id="hispanic"></div>
-                </div>
-            </div>
             <div class="col-md-2"  >
                 <div class="row">
                     <div class="col-md-10" id="college"></div>
@@ -323,7 +288,7 @@
             </div>
             <div class="col-md-2"  >
                 <div class="row">
-                    <div class="col-md-10" id="asian"></div>
+                    <div class="col-md-10" id="no_college"></div>
                 </div>
             </div>
             <div class="col-md-2"  >
@@ -333,9 +298,15 @@
             </div>
             <div class="col-md-2"  >
                 <div class="row">
-                    <div class="col-md-10" id="no_college"></div>
+                    <div class="col-md-10" id="hispanic"></div>
                 </div>
             </div>
+            <div class="col-md-2"  >
+                <div class="row">
+                    <div class="col-md-10" id="asian"></div>
+                </div>
+            </div>
+            
         </div>
        
     </section>
@@ -344,46 +315,67 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h2>2012 Results</h2>
-                    <hr class="small">
+                    <h1>2012 Results</h1>
+                    <hr class="small style2">
+                    <br/>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" >Democrat</p></div>
+                        <div class="col-md-2"><span class="glyphicon glyphicon-ok" /></div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" >Republican</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <img class="img-responsive"src="img/obama.jpg" alt="obama" class="pull-left" width="50" height="50">
+                </div>     
+                 <div class="col-md-1">
+                    <svg width="100" height="50">
+                        <rect width="100" height="50" stroke="steelblue" fill="steelblue" ></rect>
+                        <text dx="20" dy="30" class="state_stat_hdr ">332</text>
+                    </svg>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" width="50" height="50">
+                </div>
+                <div class="col-md-1">
+                    <svg width="100" height="50">
+                        <rect width="100" height="50" stroke="indianred" fill="indianred" ></rect>
+                        <text dx="20" dy="30" class="state_stat_hdr ">206</text>
+                    </svg>
+                </div>
+                <!--<div class="col-md-2" style="background-color:steelblue">
+                    <p style="font-weight:bold" id="repub_tally" class="state_stat_hdr text-vertical-center"></p>
+                </div>-->
+            </div>
+        </div>
+        <div class="container">
+        <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
                 <div class="col-md-8" id="map_2012">
                 </div>
-
                 <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-4" id="tally_div">
-                            <div class="row">
-                            <p class="state_stat_hdr" style="font-weight:bold">Electoral College Tally</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img class="img-circle  img-responsive" src="img/obama.jpg" alt="clinton" class="pull-left">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="state_stat_hdr" style="font-weight:bold" class="text-vertical-center">332</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img class="img-circle img-responsive" src="img/romney.jpg" alt="trump" class="pull-left">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="state_stat_hdr" style="font-weight:bold" class="text-vertical-center">206</p>
-                                </div>
-                            </div>
-                        </div>                   
+                    <div class="row" id="state_2012">
                     </div>
-                    <div class="row" id="state_2012" ></div>
-
-                 </div>
+                    <div class="row" id="state_bar_2012">
+                    </div>
+                </div>
             </div>
-            
-        
+        </div>
         
     </section>
     
@@ -418,7 +410,7 @@
                     <h4><strong>Subhashini R</strong>
                     </h4>    
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:subhashini.r@ischool.berkeley.edu">subhashini.r@ischool.berkeley.edu</a>
                         </li>
                     </ul>
                 </div>                

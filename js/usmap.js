@@ -1,12 +1,14 @@
 var USMapModule = (function() {
+    //votes per racial groups in the 2012 elections (source: http://projects.fivethirtyeight.com/2016-swing-the-election/)
+    // This is used as the starting point for the control values
     var percent_vote_repub = {hispanic:29, black:7, wht_col:56, wht_non_col:62, asn_othr:67 };
     var percent_vote_dem = {hispanic:71, black:93, wht_col:44, wht_non_col:38, asn_othr:33 };
     //var percent_vote_repub = {hispanic:50, black:50, wht_col:50, wht_non_col:50, asn_othr:50 };
     //var percent_vote_dem = {hispanic:50, black:50, wht_col:50, wht_non_col:50, asn_othr:50 };
     
-    //average historic voter turnout (1980-2012) is used for 2016
-    //var percent_voter_turnout = {hispanic:47.8, black:58.9, wht_col:65.2, wht_non_col:65.2, asn_othr:46.9 };
-    var percent_voter_turnout = {hispanic:100, black:100, wht_col:100, wht_non_col:100, asn_othr:100 };
+    //average historic voter turnout (1980-2012) is used for 2016 (Source: http://www.census.gov/data/tables/time-series/demo/voting-and-registration/voting-historical-time-series.html Table A6; http://www.census.gov/content/dam/Census/library/visualizations/time-series/demo/a6-presidential.jpg)
+    var percent_voter_turnout = {hispanic:47.8, black:58.9, wht_col:65.2, wht_non_col:65.2, asn_othr:46.9 };
+    //var percent_voter_turnout = {hispanic:100, black:100, wht_col:100, wht_non_col:100, asn_othr:100 };
     
     var elvoteobj_cached = null;
     var centerobj_cached = null;
@@ -224,12 +226,6 @@ var USMapModule = (function() {
 
 
             
-            
-            	
-        
-            
-           
-            
             /*console.log(stateobj.id); */
             var yScale = d3.scale.linear()
                     .domain([0, max_pop])
@@ -317,7 +313,9 @@ var USMapModule = (function() {
                         elvoteobjprops = elvoteobj.features[j].properties;
                     
                         centerobjprops.elvotes = labelobjprops.elvotes = Number(elvoteobjprops.electoral);
-                        //compute_popular_vote(elvoteobjprops);
+                        
+                        compute_popular_vote(elvoteobjprops);
+                        
                         centerobjprops.repub_votes = elvoteobjprops.repub_votes = Math.round(elvoteobjprops.repub_votes);
                         centerobjprops.dem_votes = elvoteobjprops.dem_votes = Math.round(elvoteobjprops.dem_votes);
                         
@@ -493,6 +491,32 @@ var USMapModule = (function() {
             
             updateTally(dem_tally, repub_tally);
             
+            /*
+            circles = map_svg.selectAll(".circle")
+                    .data(centerobj_cached.features);
+            console.log("Circles:");
+            console.log(circles);
+            
+            dem_to_repub = map_svg.selectAll(".circle.dem_circle")
+                .filter(function(d){return d.properties.dem_votes < d.properties.repub_votes});
+            console.log("demtorepub:");
+            console.log(dem_to_repub);
+            
+            repub_to_dem = map_svg.selectAll(".circle.repub_circle");
+                //.filter(function(d){return d.properties.dem_votes > d.properties.repub_votes});
+            console.log("repubtodem");
+            console.log(repub_to_dem);
+            
+            dem_to_repub
+                .classed("dem_circle", "false")
+                .classed("split_circle")
+                .classed("repub_circle", "true");
+
+            repub_to_dem
+                .classed("repub_circle", "false")
+                .classed("split_circle")
+                .classed("dem_circle", "true");
+                */
             map_svg
             .selectAll(".circle")
             .data(centerobj_cached.features)

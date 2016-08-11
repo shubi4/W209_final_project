@@ -36,7 +36,7 @@ function control_race(id_div, data, title){
 					}
 					d3.select('#bar_'+myId).attr("width", function(d) { return xScale(d.value);})
 					d3.select('#txt_'+myId).attr("x", function(d) { return xScale(d.value) + 60; })
-					d3.select('#txt_'+myId).text(function(d) { return xScale(d.value) + "%"; });
+					d3.select('#txt_'+myId).text(function(d) { return d.value + "%"; });
 				}
 				else if((data[i].id == otherId) && (data[i].value > 1)){
 					data[i].value-=step;
@@ -45,7 +45,7 @@ function control_race(id_div, data, title){
 					}
 					d3.select('#bar_'+otherId).attr("width", function(d) { return xScale(d.value); })
 					d3.select('#txt_'+otherId).attr("x", function(d) { return xScale(d.value) + 60; })
-					d3.select('#txt_'+otherId).text(function(d) { return xScale(d.value) + "%"; });
+					d3.select('#txt_'+otherId).text(function(d) { return d.value + "%"; });
 				}
 		   
 			}
@@ -150,7 +150,7 @@ function control_race(id_div, data, title){
       .attr("y", 10 + barHeight / 2)
       .attr("dy", ".35em")
 	  .attr("class","ctrl_text")
-      .text(function(d) { return xScale(d.value) + "%"; });
+      .text(function(d) { return d.value + "%"; });
   
 	  
 	function type(d) {
@@ -160,7 +160,8 @@ function control_race(id_div, data, title){
 
 }
     //
-    // Initialize controls to 2012 levels
+    // Initialize controls to 2012 levels (must match initial value in USMapModule.percent_vote_repub
+    // and USMapModule.percent_vote_dem)
     //
 	var data_hispanic = [
 	  {id: "grp1_1", value:  71, class: "rect_dem"},
@@ -188,7 +189,7 @@ function control_race(id_div, data, title){
 	];
 	
 	control_race("hispanic", data_hispanic,"Hispanic");
-	control_race("afro", data_afro,"Afro American");
+	control_race("afro", data_afro,"African American");
 	control_race("college", data_college,"College educated white");
 	control_race("no_college", data_non_college,"Non college educated white");
 	control_race("asian", data_asian,"Asian and other");

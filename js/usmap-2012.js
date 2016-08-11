@@ -4,9 +4,9 @@ var hmargin = 10,
 var map_width = 900,
     map_height = 500;
 var state_width = 350,
-	state_height = 300;
+	state_height = 250;
 var state_bar_width = 330,
-	state_bar_height = 400; 
+	state_bar_height = 300; 
 var circscale2 = d3.scale.sqrt()
 				.domain([0, map_height])
 				.range([0, 30]);
