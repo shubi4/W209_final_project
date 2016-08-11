@@ -29,6 +29,7 @@
     <![endif]-->
     <style>
 
+
         /* Start Vikram - Maps */
          .state {
             fill-opacity: 0.5;
@@ -108,6 +109,24 @@
 
         /* End: Vikram - Maps */
 
+
+        /* Start: common css */
+	
+	/*
+	   css to prevent unwanted text selection 
+	   applied to everything except ctrl_line 
+	*/
+        body:not(.ctrl_line){
+  	 -webkit-touch-callout: none; /* iOS Safari */
+  	 -webkit-user-select: none;   /* Chrome/Safari/Opera */
+         -khtml-user-select: none;    /* Konqueror */
+         -moz-user-select: none;      /* Firefox */
+         -ms-user-select: none;       /* Internet Explorer/Edge */
+         user-select: none;           /* Non-prefixed version, currently
+                                  	not supported by any browser */
+        }
+        /* End: common css */
+
         /* Start: Loris - Controls */
         .rect_dem {
           fill: steelblue;
@@ -122,13 +141,6 @@
           font: 13px sans-serif;
           text-anchor: end;
           font-weight: bold;
-           -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none;   /* Chrome/Safari/Opera */
-          -khtml-user-select: none;    /* Konqueror */
-          -moz-user-select: none;      /* Firefox */
-          -ms-user-select: none;       /* Internet Explorer/Edge */
-          user-select: none;           /* Non-prefixed version, currently
-                                          not supported by any browser */
         }
 
         .ctrl_button{
@@ -151,6 +163,8 @@
          stroke-width:2;
         }
         /* End: Loris - Controls */
+
+<p>
     </style>
 </head>
 
