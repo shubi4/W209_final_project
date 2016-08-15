@@ -520,9 +520,6 @@ var USMapModule = (function() {
             map_svg
             .selectAll(".circle")
             .data(centerobj_cached.features)
-            .transition()
-            .delay(1000)
-            .duration(5000)
             .attr("class", function(d) { if (d.properties.dem_votes > d.properties.repub_votes) {
                                             return "circle dem_circle";
                                         } 
