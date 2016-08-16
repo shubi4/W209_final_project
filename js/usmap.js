@@ -20,7 +20,7 @@ var USMapModule = (function() {
     var state_width = 260,
         state_height = 320;
     var state_bar_width = 290,
-        state_bar_height = 220; 
+        state_bar_height = 350; 
     var circscale = d3.scale.sqrt()
                     .domain([0, map_height])
                     .range([0, 30]);
@@ -163,7 +163,7 @@ var USMapModule = (function() {
                 append("tspan")
                 .attr("class", "state_stat_stats")
                 .text(function(d) {
-                            return "Non-College educated white: " + d.properties.noncollege_white + "%";
+                            return "Non-College white: " + d.properties.noncollege_white + "%";
                         })
                 .attr("x", state_stat_off)
                 .attr("y", compute_stat_height(4));	
