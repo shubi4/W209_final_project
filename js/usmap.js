@@ -197,7 +197,7 @@ var USMapModule = (function() {
                 .text(function(d) {
                             winner = ""
                             if (d.properties.dem_votes > d.properties.repub_votes) {
-                                winner = " (WINNER)"
+                                winner = " (WIN)"
                             }
                             return "Democratic Vote: " + format_millions(d.properties.dem_votes) + winner;
                         })
@@ -209,7 +209,7 @@ var USMapModule = (function() {
                 .text(function(d) {
                             winner = ""
                             if (d.properties.repub_votes > d.properties.dem_votes) {
-                                winner = " (WINNER)"
+                                winner = " (WIN)"
                             }
                             return "Republican Vote: " + format_millions(d.properties.repub_votes) + winner;
                         })
