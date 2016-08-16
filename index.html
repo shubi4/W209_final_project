@@ -33,8 +33,8 @@
         /* Start Vikram - Maps */
          .state {
             fill-opacity: 0.5;
-            fill: lightgrey;
-            stroke: lightgrey;
+            fill: grey;
+            stroke: grey;
         }
         .state.selected {
             fill-opacity: 1;
@@ -78,6 +78,13 @@
             stroke: black;
             fill: black;
             font-size: 20pt;
+            text-anchor: left;
+        }
+        /* Same as state_stat_hdr except font-size */
+        .party_name {
+            stroke: black;
+            fill: black;
+            font-size: 16pt;
             text-anchor: left;
         }
         .state_stat_stats {
@@ -230,35 +237,20 @@
 
 <body>
 
-    <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>2016 US Elections</a>
-            </li>
-            <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
-            </li>
-            <li>
-                <a href="#predict_2016" onclick=$("#menu-close").click();>Predict 2016</a>
-            </li>
-            <li>
-                <a href="#past_2012" onclick=$("#menu-close").click();>Results 2012</a>
-            </li>
-			<li>
-                <a href="#past_2008" onclick=$("#menu-close").click();>Results 2008</a>
-            </li>
-            <li>
-                <a href="#footer" onclick=$("#menu-close").click();>About</a>
-            </li>
-        </ul>
-    </nav>
-
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
+            <!-- Navigation Pills -->
+            <nav id="topnav">
+              <ul class="nav nav-pills nav-stacked navbar-left">
+                <li role="presentation" class="active"><a href="#topnav">Main</a></li>
+                <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
+                <li role="presentation"><a href="#2012nav">2012</a></li>
+                <li role="presentation"><a href="#2008nav">2008</a></li>
+                <li role="presentation"><a href="#aboutnav">About</a></li>
+             </ul>
+            </nav>
+
             <h1>2016 US Presidential Elections</h1>
             <br/>
             <h2>MIDS Final Project Summer 2016</h2>
@@ -272,24 +264,30 @@
 					<div  align="right" >Who wins?</div>
 				</div>
 			</div>	
-            <a href="#predict_2016" class="btn btn-dark btn-lg">Explore</a>
-			<a id ="anchor_2016" href="#predict_2016"></a>
-            <a id ="anchor_2012" href="#past_2012"></a>
-            <a id ="anchor_2008" href="#past_2008"></a>
+            <a href="#2016nav" class="btn btn-dark btn-lg">Explore</a>
+			<a id ="anchor_2016" href="#2016nav"></a>
+            <a id ="anchor_2012" href="#2012nav"></a>
+            <a id ="anchor_2008" href="#2008nav"></a>
         </div>
     </header>
     
     <!-- Predict -->
     <section id="predict_2016" class="predict">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h1>Predict the 2016 election</h1>
-                    <hr class="small style2">
-                    <br/>
-                </div>
-            </div>
-        </div>
+        <!-- Navigation Pills -->
+        <nav id="2016nav">
+          <ul class="nav nav-pills nav-stacked navbar-left">
+            <li role="presentation"><a href="#topnav">Main</a></li>
+            <li role="presentation" class="active"><a href="#2016nav">Predict 2016</a></li>
+            <li role="presentation"><a href="#2012nav">2012</a></li>
+            <li role="presentation"><a href="#2008nav">2008</a></li>
+            <li role="presentation"><a href="#aboutnav">About</a></li>
+           </ul>
+        </nav>
+
+        <h1 align="center">Predict the 2016 election</h1>
+        <hr class="small style2">
+        <br/>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
@@ -310,21 +308,21 @@
             </div>
             <div class="row">
                 <div class="col-md-1">
-                    <img class="img-responsive"src="img/clinton.jpg" alt="clinton" class="pull-left" width="50" height="50">
+                    <img class="img-responsive"src="img/clinton.jpg" alt="clinton" class="pull-left" style="float: right" width="50" height="50">
                 </div>     
                  <div class="col-md-1">
                     <svg width="100" height="50">
-                        <rect width="100" height="50" stroke="steelblue" fill="steelblue" ></rect>
+                        <rect width="75" height="50" stroke="steelblue" fill="steelblue" ></rect>
                         <text id="dem_tally" dx="20" dy="30" class="state_stat_hdr "></text>
                     </svg>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <img class="img-responsive" src="img/trump.jpg" alt="trump" class="pull-right" width="50" height="50">
+                    <img class="img-responsive" src="img/trump.jpg" alt="trump" class="pull-right" style="float: right" width="50" height="50">
                 </div>
                 <div class="col-md-1">
                     <svg width="100" height="50">
-                        <rect width="100" height="50" stroke="indianred" fill="indianred" ></rect>
+                        <rect width="75" height="50" stroke="indianred" fill="indianred" ></rect>
                         <text id="repub_tally" dx="20" dy="30" class="state_stat_hdr "></text>
                     </svg>
                 </div>
@@ -333,26 +331,23 @@
                 </div>-->
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="float: top">
         <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" style="float: top">
             <div class="row">
                 <div class="col-md-8" id="map_div">
                 </div>
                 <div class="col-md-4">
-                    <div class="row" id="state_div">
+                    <div class="row" id="state_div" style="float: left">
                     </div>
-                    <div class="row" id="state_bar_div">
+                    <div class="row" id="state_bar_div" style="float: left">
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="container">
-        <p class="lead text-center" style="font-weight:bold" >Change the percentage of votes for every race group clicking on the button plus<hr class="style2" width="500px"/></p>
-        </div>
-        <div class="container-fluid">
+        <div class="container-fluid" style="float: left">
             <div class="col-md-2"  >
                 <div class="row">
                     <div class="col-md-10" id="college"></div>
@@ -380,19 +375,29 @@
             </div>
             
         </div>
+
+        <div class="container" style="float: top">
+        <p class="lead text-center" style="font-weight:bold" >Change the percentage of votes for every race group clicking on the +<hr class="style2" width="100px"/></p>
+        </div>
        
     </section>
 
     <section id="past_2012" class="past">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h1>2012 Results</h1>
-                    <hr class="small style2">
-                    <br/>
-                </div>
-            </div>
-        </div>
+        <!-- Navigation Pills -->
+        <nav id="2012nav">
+          <ul class="nav nav-pills nav-stacked navbar-left">
+           <li role="presentation"><a href="#topnav">Main</a></li>
+           <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
+           <li role="presentation" class="active"><a href="#2012nav">2012</a></li>
+           <li role="presentation"><a href="#2008nav">2008</a></li>
+           <li role="presentation"><a href="#aboutnav">About</a></li>
+          </ul>
+        </nav>
+
+        <h1 align="center">2012 Results</h1>
+        <hr class="small style2">
+        <br/>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
@@ -410,21 +415,21 @@
             </div>
             <div class="row">
                 <div class="col-md-1">
-                    <img class="img-responsive"src="img/obama.jpg" alt="obama" class="pull-left" width="50" height="50">
+                    <img class="img-responsive"src="img/obama.jpg" alt="obama" class="pull-left" style="float: right" width="50" height="50">
                 </div>     
                  <div class="col-md-1">
                     <svg width="100" height="50">
-                        <rect width="100" height="50" stroke="steelblue" fill="steelblue" ></rect>
+                        <rect width="75" height="50" stroke="steelblue" fill="steelblue" ></rect>
                         <text dx="20" dy="30" class="state_stat_hdr ">332</text>
                     </svg>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" width="50" height="50">
+                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" style="float: right" width="50" height="50">
                 </div>
                 <div class="col-md-1">
                     <svg width="100" height="50">
-                        <rect width="100" height="50" stroke="indianred" fill="indianred" ></rect>
+                        <rect width="75" height="50" stroke="indianred" fill="indianred" ></rect>
                         <text dx="20" dy="30" class="state_stat_hdr ">206</text>
                     </svg>
                 </div>
@@ -450,18 +455,22 @@
         </div>
         
     </section>
-    
 	
 	<section id="past_2008" class="past">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h1>2008 Results</h1>
-                    <hr class="small style2">
-                    <br/>
-                </div>
-            </div>
-        </div>
+        <!-- Navigation Pills -->
+        <nav id="2008nav">
+          <ul class="nav nav-pills nav-stacked navbar-left">
+            <li role="presentation"><a href="#topnav">Main</a></li>
+            <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
+            <li role="presentation"><a href="#2012nav">2012</a></li>
+            <li role="presentation" class="active"><a href="#2008nav">2008</a></li>
+            <li role="presentation"><a href="#aboutnav">About</a></li>
+          </ul>
+        </nav>
+
+        <h1 align="center">2008 Results</h1>
+        <hr class="small style2">
+        <br/>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
@@ -479,21 +488,21 @@
             </div>
             <div class="row">
                 <div class="col-md-1">
-                    <img class="img-responsive"src="img/obama.jpg" alt="obama" class="pull-left" width="50" height="50">
+                    <img class="img-responsive"src="img/obama.jpg" alt="obama" class="pull-left" style="float: right" width="50" height="50">
                 </div>     
                  <div class="col-md-1">
                     <svg width="100" height="50">
-                        <rect width="100" height="50" stroke="steelblue" fill="steelblue" ></rect>
+                        <rect width="75" height="50" stroke="steelblue" fill="steelblue" ></rect>
                         <text dx="20" dy="30" class="state_stat_hdr ">332</text>
                     </svg>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" width="50" height="50">
+                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" style="float: right" width="50" height="50">
                 </div>
                 <div class="col-md-1">
                     <svg width="100" height="50">
-                        <rect width="100" height="50" stroke="indianred" fill="indianred" ></rect>
+                        <rect width="75" height="50" stroke="indianred" fill="indianred" ></rect>
                         <text dx="20" dy="30" class="state_stat_hdr ">206</text>
                     </svg>
                 </div>
@@ -522,6 +531,17 @@
 	
     <!-- Footer -->
     <footer id="footer">
+       <!-- Navigation Pills -->
+       <nav id="aboutnav">
+         <ul class="nav nav-pills nav-stacked navbar-left">
+           <li role="presentation"><a href="#topnav">Main</a></li>
+           <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
+           <li role="presentation"><a href="#2012nav">2012</a></li>
+           <li role="presentation"><a href="#2008nav">2008</a></li>
+           <li role="presentation" class="active"><a href="#aboutnav">About</a></li>
+         </ul>
+        </nav>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
@@ -656,6 +676,13 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
+    </script>
+
+    // Prevent '#' from showing up on browser URL bar
+    <script>
+    $('.topnav').hover(function(event)) {
+	event.preventDefault();
+    });
     </script>
 
 </body>

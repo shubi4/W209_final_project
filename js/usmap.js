@@ -17,9 +17,9 @@ var USMapModule = (function() {
         vmargin = 10;
     var map_width = 900,
         map_height = 500;
-    var state_width = 420,
+    var state_width = 260,
         state_height = 320;
-    var state_bar_width = 350,
+    var state_bar_width = 290,
         state_bar_height = 220; 
     var circscale = d3.scale.sqrt()
                     .domain([0, map_height])
