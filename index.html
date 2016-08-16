@@ -164,6 +164,64 @@
          stroke:black;
          stroke-width:2;
         }
+		
+		
+		
+		.path1 {
+			stroke: steelblue;
+			stroke-width: 5;
+			fill: none;
+		}
+		
+		.path2 {
+			stroke: indianred;
+			stroke-width: 5;
+			fill: none;
+		}
+		
+		.axis {
+		  shape-rendering: crispEdges;
+		}
+
+		.x.axis line, .x.axis path {
+		  fill: none;
+		  stroke: #7F7F7F;
+		  stroke-width: 5;
+		}
+		
+		.x.axis line {
+		  stroke: #7F7F7F;
+		}
+
+		.y.axis line, .y.axis path {
+		  fill: none;
+		  stroke: #7F7F7F;
+		  stroke-width: 5;
+		}
+		.y.axis line {
+		  stroke: lightgrey;
+		}
+		.text_normal {
+			font-size:20pt;
+			fill: #7F7F7F;
+			font-weight: bold;
+			font-family: Calibri, sans-serif;
+		}
+		
+		.text_link {
+			font-size:30pt;
+			text-decoration: underline;
+			fill: green;
+			font-weight: bold;
+			cursor: pointer;
+			font-family: Calibri, sans-serif;
+		}
+		
+		.tick line{
+			stroke-width: 1;
+			stroke-dasharray: 10,10;
+			stroke: #7F7F7F;
+		  }
         /* End: Loris - Controls */
 
 <p>
@@ -184,10 +242,13 @@
                 <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
             <li>
-                <a href="#predict" onclick=$("#menu-close").click();>Predict 2016</a>
+                <a href="#predict_2016" onclick=$("#menu-close").click();>Predict 2016</a>
             </li>
             <li>
-                <a href="#past" onclick=$("#menu-close").click();>Past Results</a>
+                <a href="#past_2012" onclick=$("#menu-close").click();>Results 2012</a>
+            </li>
+			<li>
+                <a href="#past_2008" onclick=$("#menu-close").click();>Results 2008</a>
             </li>
             <li>
                 <a href="#footer" onclick=$("#menu-close").click();>About</a>
@@ -202,15 +263,24 @@
             <br/>
             <h2>MIDS Final Project Summer 2016</h2>
             <br/>
-            <a href="#predict" class="btn btn-dark btn-lg">Explore</a>
+			<div class="container">
+			<p class="lead" style="font-weight:bold"><br/>>> Click on a year for details <<<br/></p>
+			</div>
+			<div id="main_menu"></div>
+			<div class="container">
+				<div style="font-size:30pt;text-decoration: underline;color:green;font-weight: bold;cursor: pointer;font-family: Calibri, sans-serif;" onclick="actionCall(2016);">
+					<div  align="right" >Who wins?</div>
+				</div>
+			</div>	
+            <a href="#predict_2016" class="btn btn-dark btn-lg">Explore</a>
+			<a id ="anchor_2016" href="#predict_2016"></a>
+            <a id ="anchor_2012" href="#past_2012"></a>
+            <a id ="anchor_2008" href="#past_2008"></a>
         </div>
     </header>
-
     
-
-
     <!-- Predict -->
-    <section id="predict" class="predict">
+    <section id="predict_2016" class="predict">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
@@ -280,7 +350,7 @@
         </div>
         
         <div class="container">
-        <p class="lead text-center" style="font-weight:bold" >Change the percentage of votes for every race group<hr class="style2" width="500px"/></p>
+        <p class="lead text-center" style="font-weight:bold" >Change the percentage of votes for every race group clicking on the button plus<hr class="style2" width="500px"/></p>
         </div>
         <div class="container-fluid">
             <div class="col-md-2"  >
@@ -313,7 +383,7 @@
        
     </section>
 
-    <section id="past" class="past">
+    <section id="past_2012" class="past">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
@@ -381,6 +451,75 @@
         
     </section>
     
+	
+	<section id="past_2008" class="past">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h1>2008 Results</h1>
+                    <hr class="small style2">
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" >Democrat</p></div>
+                        <div class="col-md-2"><span class="glyphicon glyphicon-ok" /></div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-6" ><p class="state_stat_hdr text-left" >Republican</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <img class="img-responsive"src="img/obama.jpg" alt="obama" class="pull-left" width="50" height="50">
+                </div>     
+                 <div class="col-md-1">
+                    <svg width="100" height="50">
+                        <rect width="100" height="50" stroke="steelblue" fill="steelblue" ></rect>
+                        <text dx="20" dy="30" class="state_stat_hdr ">332</text>
+                    </svg>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" width="50" height="50">
+                </div>
+                <div class="col-md-1">
+                    <svg width="100" height="50">
+                        <rect width="100" height="50" stroke="indianred" fill="indianred" ></rect>
+                        <text dx="20" dy="30" class="state_stat_hdr ">206</text>
+                    </svg>
+                </div>
+                <!--<div class="col-md-2" style="background-color:steelblue">
+                    <p style="font-weight:bold" id="repub_tally" class="state_stat_hdr text-vertical-center"></p>
+                </div>-->
+            </div>
+        </div>
+        <div class="container">
+        <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8" id="map_2012">
+                </div>
+                <div class="col-md-4">
+                    <div class="row" id="state_2012">
+                    </div>
+                    <div class="row" id="state_bar_2012">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+	
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
@@ -433,7 +572,9 @@
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     <script src="http://d3js.org/queue.v1.min.js"></script>
 
-
+	<!-- Code: Main control -->
+    <script src="js/control_main.js"></script>
+	
     <!-- Code: us maps creation -->
     <script src="js/usmap.js"></script>
     <script src="js/usmap-2012.js"></script>
@@ -442,6 +583,7 @@
     <!-- Code: Race controls creation -->
     <script src="js/control_race.js"></script>
 
+	
     <!-- Custom Theme JavaScript -->
     <script>
     // Closes the sidebar menu
