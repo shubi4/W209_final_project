@@ -15,7 +15,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <!--<link href="css/stylish-portfolio.css" rel="stylesheet">-->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -77,7 +79,7 @@
         .state_stat_hdr {
             stroke: black;
             fill: black;
-            font-size: 20pt;
+            font-size: 16pt;
             text-anchor: left;
         }
         /* Same as state_stat_hdr except font-size */
@@ -90,7 +92,7 @@
         .state_stat_stats {
             stroke: grey;
             fill: grey;
-            font-size: 12pt;
+            font-size: 10pt;
             text-anchor: left;
         }
         .axis path,
@@ -109,7 +111,7 @@
         .state_bar_title {
             stroke: black;
             fill: black;
-            font-size: 20pt;
+            font-size: 16pt;
             text-anchor: left;
         }
         .state_bar {
@@ -236,27 +238,47 @@
 </head>
 
 <body>
+  <div id="wrapper">
+     <!-- Sidebar -->
+     <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Elections 2016
+                    </a>
+                </li>
+                <li>
+                    <a href="#top">Home</a>
+                </li>
+                <li>
+                    <a href="#predict_2016">Predict 2016</a>
+                </li>
+                <li>
+                    <a href="#past_2012">2012</a>
+                </li>
+                <li>
+                    <a href="#past_2008">2008</a>
+                </li>
+                <li>
+                    <a href="#footer">What's Next</a>
+                </li>
+                <li>
+                    <a href="#footer">Contact</a>
+                </li>
+            </ul>
+   </div>
+   <!-- /#sidebar-wrapper -->
 
+   <div id="page-content-wrapper">
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <!-- Navigation Pills -->
-            <nav id="topnav">
-              <ul class="nav nav-pills nav-stacked navbar-left">
-                <li role="presentation" class="active"><a href="#topnav">Main</a></li>
-                <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
-                <li role="presentation"><a href="#2012nav">2012</a></li>
-                <li role="presentation"><a href="#2008nav">2008</a></li>
-                <li role="presentation"><a href="#aboutnav">About</a></li>
-             </ul>
-            </nav>
-
-            <h1>2016 US Presidential Elections</h1>
+            <h1 align="center">2016 US Presidential Elections</h1>
             <br/>
-            <h2>MIDS Final Project Summer 2016</h2>
+            <h2 align="center">MIDS Final Project Summer 2016</h2>
             <br/>
 			<div class="container">
-			<p class="lead" style="font-weight:bold"><br/>>> Click on a year for details <<<br/></p>
+			<p class="lead" align="center" style="font-weight:bold"><br/>>> Click on a year for details <<<br/></p>
 			</div>
 			<div id="main_menu"></div>
 			<div class="container">
@@ -273,17 +295,6 @@
     
     <!-- Predict -->
     <section id="predict_2016" class="predict">
-        <!-- Navigation Pills -->
-        <nav id="2016nav">
-          <ul class="nav nav-pills nav-stacked navbar-left">
-            <li role="presentation"><a href="#topnav">Main</a></li>
-            <li role="presentation" class="active"><a href="#2016nav">Predict 2016</a></li>
-            <li role="presentation"><a href="#2012nav">2012</a></li>
-            <li role="presentation"><a href="#2008nav">2008</a></li>
-            <li role="presentation"><a href="#aboutnav">About</a></li>
-           </ul>
-        </nav>
-
         <h1 align="center">Predict the 2016 election</h1>
         <hr align="center" class="small style2">
         <br/>
@@ -389,16 +400,6 @@
     </section>
 
     <section id="past_2012" class="past">
-        <!-- Navigation Pills -->
-        <nav id="2012nav">
-          <ul class="nav nav-pills nav-stacked navbar-left">
-           <li role="presentation"><a href="#topnav">Main</a></li>
-           <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
-           <li role="presentation" class="active"><a href="#2012nav">2012</a></li>
-           <li role="presentation"><a href="#2008nav">2008</a></li>
-           <li role="presentation"><a href="#aboutnav">About</a></li>
-          </ul>
-        </nav>
 
         <h1 align="center">2012 Results</h1>
         <hr align="center" class="small style2">
@@ -444,39 +445,33 @@
                 </div>-->
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="float: top">
         <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" style="float: top">
             <div class="row">
                 <div class="col-md-8" id="map_2012">
                 </div>
                 <div class="col-md-4">
-                    <div class="row" id="state_2012">
+                    <div class="row" id="state_2012" style="float: left">
                     </div>
-                    <div class="row" id="state_bar_2012">
+                    <div class="row" id="state_bar_2012" style="float: left">
                     </div>
                 </div>
             </div>
         </div>
         
     </section>
-	
-	<section id="past_2008" class="past">
-        <!-- Navigation Pills -->
-        <nav id="2008nav">
-          <ul class="nav nav-pills nav-stacked navbar-left">
-            <li role="presentation"><a href="#topnav">Main</a></li>
-            <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
-            <li role="presentation"><a href="#2012nav">2012</a></li>
-            <li role="presentation" class="active"><a href="#2008nav">2008</a></li>
-            <li role="presentation"><a href="#aboutnav">About</a></li>
-          </ul>
-        </nav>
+
+
+
+
+    <section id="past_2008" class="past">
 
         <h1 align="center">2008 Results</h1>
         <hr align="center" class="small style2">
         <br/>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
@@ -504,7 +499,7 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <img class="img-responsive" src="img/romney.jpg" alt="romney" class="pull-right" style="float: right" width="50" height="50">
+                    <img class="img-responsive" src="img/mccain.jpg" alt="mccain" class="pull-right" style="float: right" width="50" height="50">
                 </div>
                 <div class="col-md-1">
                     <svg width="100" height="50">
@@ -517,36 +512,27 @@
                 </div>-->
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="float: top">
         <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" style="float: top">
             <div class="row">
-                <div class="col-md-8" id="map_2012">
+                <div class="col-md-8" id="map_2008">
                 </div>
                 <div class="col-md-4">
-                    <div class="row" id="state_2012">
+                    <div class="row" id="state_2008" style="float: right">
                     </div>
-                    <div class="row" id="state_bar_2012">
+                    <div class="row" id="state_bar_2008" style="float: right">
                     </div>
                 </div>
             </div>
         </div>
         
     </section>
-	
+
+
     <!-- Footer -->
     <footer id="footer">
-       <!-- Navigation Pills -->
-       <nav id="aboutnav">
-         <ul class="nav nav-pills nav-stacked navbar-left">
-           <li role="presentation"><a href="#topnav">Main</a></li>
-           <li role="presentation"><a href="#2016nav">Predict 2016</a></li>
-           <li role="presentation"><a href="#2012nav">2012</a></li>
-           <li role="presentation"><a href="#2008nav">2008</a></li>
-           <li role="presentation" class="active"><a href="#aboutnav">About</a></li>
-         </ul>
-        </nav>
 
         <div class="container">
             <div class="row">
@@ -586,6 +572,12 @@
         </div>
         <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
+   </div>
+   <!-- /#page-content-wrapper -->
+
+ </div>
+ <!-- /#wrapper -->
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -604,6 +596,7 @@
     <!-- Code: us maps creation -->
     <script src="js/usmap.js"></script>
     <script src="js/usmap-2012.js"></script>
+    <script src="js/usmap-2008.js"></script>
     
 
     <!-- Code: Race controls creation -->

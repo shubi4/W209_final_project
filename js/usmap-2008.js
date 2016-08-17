@@ -11,28 +11,28 @@ var circscale2 = d3.scale.sqrt()
 				.domain([0, map_height])
 				.range([0, 30]);
 var path2 = d3.geo.path();
-var map_svg2 = d3.select("#map_2012")
+var map8_svg2 = d3.select("#map_2008")
 				.append("svg")
 				.attr("width", map_width)
 				.attr("height", map_height);
-var map_g2 = map_svg2.append("g")
+var map8_g2 = map8_svg2.append("g")
 				.attr("width", map_width - hmargin)
 				.attr("height", map_height - vmargin)
 				.attr("transform", "translate(" + hmargin + "," + vmargin + ")");
-var state_svg2 = d3.select("#state_2012")
+var state8_svg2 = d3.select("#state_2008")
 				.append("svg")
 				.attr("width", state_width)
 				.attr("height", state_height);
-var state_g2 = state_svg2
+var state8_g2 = state8_svg2
 				.append("g")
 				.attr("width", state_width - hmargin)
 				.attr("height", state_height- vmargin)
 				.attr("transform", "translate(" + hmargin + "," + vmargin + ")");
-var state_bar_svg2 = d3.select("#state_bar_2012")
+var state8_bar_svg2 = d3.select("#state_bar_2008")
 					.append("svg")
 					.attr("width", state_bar_width)
 					.attr("height", state_bar_height);
-var state_bar_g2 = state_bar_svg2
+var state8_bar_g2 = state8_bar_svg2
 					.append("g")
 					.attr("width", state_bar_width - hmargin)
 					.attr("height", state_bar_height - vmargin)
@@ -95,13 +95,13 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 					throw "Data Corruption";
 				else
 					centerobj.features[i].properties.elvotes = labelobj.features[i].properties.elvotes = Number(elvoteobj.features[j].properties.electoral);
-					centerobj.features[i].properties.pop12 = elvoteobj.features[j].properties.pop12;
+					centerobj.features[i].properties.pop8 = elvoteobj.features[j].properties.pop8;
 					console.log(elvoteobj.features[j].properties.name + "," + elvoteobj.features[j].properties.population + "," + elvoteobj.features[j].properties.electoral);
 				break;
 			}
 		}
 	}
-	map_svg2
+	map8_svg2
 		.selectAll("path")
 		.data(topojson.feature(usobj, usobj.objects.states).features)
 		.enter()
@@ -118,12 +118,12 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 		   stateClick(d);
 		});
 		
-	map_svg2
+	map8_svg2
 		.selectAll(".circle")
 		.data(centerobj.features)
 		.enter()
 		.append("path")
-		.attr("class", function(d) { if (d.properties.pop12[0] > d.properties.pop12[1]) {
+		.attr("class", function(d) { if (d.properties.pop8[0] > d.properties.pop8[1]) {
 										return "dem_circle";
 									} else {
 										return "rep_circle";
@@ -150,7 +150,7 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 			cur_state.classed("selected", true);
 			stateClick(cur_state.data()[0]);
 		});
-	map_svg2.selectAll("text")
+	map8_svg2.selectAll("text")
 		.data(labelobj.features)
 		.enter()
 		.append("text")
@@ -178,7 +178,7 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 			cur_state.classed("selected", true);
 			stateClick(cur_state.data()[0]);
 		});
-	map_svg2.selectAll(".ptr")
+	map8_svg2.selectAll(".ptr")
 		.data(ptrobj.features)
 		.enter()
 		.append("path")
@@ -186,18 +186,18 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 		.attr("d", path2);
 	
 	function stateClick(stateobj) {
-		state_svg2
+		state8_svg2
 			.selectAll(".ststats")
 			.remove();
-		state_bar_svg2
+		state8_bar_svg2
 			.selectAll(".stbar_title")
 			.remove();
-		state_bar_svg2
+		state8_bar_svg2
 			.selectAll(".stbar")
 			.remove();
 		var max_pop = 0;
 		
-		state_text = state_svg2.selectAll(".ststats")
+		state8_text = state8_svg2.selectAll(".ststats")
 						.data(elvoteobj.features.filter(function (d) { return d.id == stateobj.id;}))
 						.enter()
 						.append("text")
@@ -205,37 +205,37 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 						.attr("class", "ststats")
 						.attr("x", state_stat_off)
 						.attr("y", state_stat_off);
-		state_text.
+		state8_text.
 			append("tspan")
 			.attr("class", "state_stat_hdr")
 			.text(function(d) {
-						max_pop = d.properties.pop12[0] + d.properties.pop12[1];
+						max_pop = d.properties.pop8[0] + d.properties.pop8[1];
 						return d.properties.name;
 					})
 			.attr("x", state_stat_off)
 			.attr("y", compute_stat_height(1));
-		state_text.
+		state8_text.
 			append("tspan")
 			.attr("class", "state_stat_stats")
 			.text(function(d) {
-				        return "Dem Pop Vote: " + format_millions(d.properties.pop12[0]);
+				        return "Dem Pop Vote: " + format_millions(d.properties.pop8[0]);
 					})
 			.attr("x", state_stat_off)
 			.attr("y", compute_stat_height(2));
-		state_text.
+		state8_text.
 			append("tspan")
 			.attr("class", "state_stat_stats")
 			.text(function(d) {
-				        return "Repub Pop Vote: " + format_millions(d.properties.pop12[1]);
+				        return "Repub Pop Vote: " + format_millions(d.properties.pop8[1]);
 					})
 			.attr("x", state_stat_off)
 			.attr("y", compute_stat_height(3));
 			
-		state_text.
+		state8_text.
 			append("tspan")
 			.attr("class", "state_stat_stats")
 			.text(function(d) {
-						if (d.properties.pop12[0] > d.properties.pop12[1]) {
+						if (d.properties.pop8[0] > d.properties.pop8[1]) {
 				        	return "State Winner: Barack Obama";
 						} else {
 							return "State Winner: Mitt Romney";
@@ -243,7 +243,7 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 					})
 			.attr("x", state_stat_off)
 			.attr("y", compute_stat_height(4));
-		state_text.
+		state8_text.
 			append("tspan")
 			.attr("class", "state_stat_stats")
 			.text(function(d) {
@@ -255,22 +255,22 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 		var yScale = d3.scale.linear()
 				.domain([0, max_pop])
 				.range([chartHeight - 100, 0]);
-		var state_pop_ticks = [];
+		var state8_pop_ticks = [];
 		for (l = 0; l < max_pop; l += 5000000) {
-			state_pop_ticks.push(l);
+			state8_pop_ticks.push(l);
 		}
 		var yAxis = d3.svg.axis()
 						.scale(yScale)
 						.orient("left")
-						.tickValues(state_pop_ticks)
+						.tickValues(state8_pop_ticks)
 						.tickFormat(function(d) { return d / 1000000;});
-		state_bar_stats = state_bar_g2.selectAll(".stbar_title")
+		state8_bar_stats = state8_bar_g2.selectAll(".stbar_title")
 						.data(elvoteobj.features.filter(function (d) { return d.id == stateobj.id;}))
 						.enter()
 						.append("g")
 						.attr("class", "stbar_title")
 						.attr("transform", "translate(" + 100 + ",0)");
-		state_bar_stats.append("text")
+		state8_bar_stats.append("text")
 						.text("Popular Vote")
 						.attr("class", "state_bar_title")
 						.attr("x", 30)
@@ -278,23 +278,23 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 						.attr("width", 100)
 						.attr("height", 100);
 		
-		state_bar_chart = state_bar_g2.selectAll(".stbar")
+		state8_bar_chart = state8_bar_g2.selectAll(".stbar")
 						.data(elvoteobj.features.filter(function (d) { return d.id == stateobj.id;}))
 						.enter()
 						.append("g")
 						.attr("class", "stbar");
-		state_bar_chart.append("g")
+		state8_bar_chart.append("g")
 			.attr("class", "x axis")
 			.attr("transform", "translate(100," + chartHeight + ")")
 			.call(xAxis2);
-		state_bar_chart.append("g")
+		state8_bar_chart.append("g")
 			.attr("class", "y axis")
 			.attr("transform", "translate(100," + 100 + ")")
 			.call(yAxis);
 		cur_state = elvoteobj.features.filter(function (d) { return d.id == stateobj.id;})
 		console.log(cur_state[0]);
-		state_bar_chart.selectAll(".state_bar")
-			.data(cur_state[0].properties.pop12)
+		state8_bar_chart.selectAll(".state_bar")
+			.data(cur_state[0].properties.pop8)
 			.enter()
 			.append("rect")
 			.attr("class", "state_bar")

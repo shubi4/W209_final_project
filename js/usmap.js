@@ -17,7 +17,7 @@ var USMapModule = (function() {
         vmargin = 10;
     var map_width = 900,
         map_height = 500;
-    var state_width = 290,
+    var state_width = 220
         state_height = 320;
     var state_bar_width = 290,
         state_bar_height = 350; 
@@ -36,7 +36,8 @@ var USMapModule = (function() {
     var state_svg = d3.select("#state_div")
                     .append("svg")
                     .attr("width", state_width)
-                    .attr("height", state_height);
+                    .attr("height", state_height)
+                    .attr("align", "left");
     var state_g = state_svg
                     .append("g")
                     .attr("width", state_width - hmargin)
@@ -199,7 +200,7 @@ var USMapModule = (function() {
                             if (d.properties.dem_votes > d.properties.repub_votes) {
                                 winner = " (WIN)"
                             }
-                            return "Democratic Vote: " + format_millions(d.properties.dem_votes) + winner;
+                            return "Dem Vote: " + format_millions(d.properties.dem_votes) + winner;
                         })
                 .attr("x", state_stat_off)
                 .attr("y", compute_stat_height(8));
@@ -211,7 +212,7 @@ var USMapModule = (function() {
                             if (d.properties.repub_votes > d.properties.dem_votes) {
                                 winner = " (WIN)"
                             }
-                            return "Republican Vote: " + format_millions(d.properties.repub_votes) + winner;
+                            return "Repub Vote: " + format_millions(d.properties.repub_votes) + winner;
                         })
                 .attr("x", state_stat_off)
                 .attr("y", compute_stat_height(9));
