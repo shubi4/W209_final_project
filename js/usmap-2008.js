@@ -94,9 +94,9 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 				if (centerobj.features[i].elvotes != null)
 					throw "Data Corruption";
 				else
-					centerobj.features[i].properties.elvotes = labelobj.features[i].properties.elvotes = Number(elvoteobj.features[j].properties.electoral);
+					centerobj.features[i].properties.elvotes = labelobj.features[i].properties.elvotes = Number(elvoteobj.features[j].properties.electoral8);
 					centerobj.features[i].properties.pop8 = elvoteobj.features[j].properties.pop8;
-					console.log(elvoteobj.features[j].properties.name + "," + elvoteobj.features[j].properties.population + "," + elvoteobj.features[j].properties.electoral);
+					console.log(elvoteobj.features[j].properties.name + "," + elvoteobj.features[j].properties.population + "," + elvoteobj.features[j].properties.electoral8);
 				break;
 			}
 		}
@@ -247,7 +247,7 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 			append("tspan")
 			.attr("class", "state_stat_stats")
 			.text(function(d) {
-				        return "EC Votes awarded: " + d.properties.electoral;
+				        return "EC Votes awarded: " + d.properties.electoral8;
 					})
 			.attr("x", state_stat_off)
 			.attr("y", compute_stat_height(5));		
