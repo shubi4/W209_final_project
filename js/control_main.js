@@ -45,7 +45,14 @@ function control_main(id_menu){
 			  .attr("class", "x axis")
 			  .attr("transform", "translate(0," + (h + 10) + ")")
 			  .call(xAxis);
-			
+
+			main_menu.append("text")      
+			.attr("x", 0 )
+			.attr("y", -30 )
+			.style("text-anchor", "middle")
+			.text("Electoral Votes")
+			.attr("class","text_normal");
+		
 		var yAxisLeft = d3.svg.axis()
 						.scale(y)
 						.ticks(4)
