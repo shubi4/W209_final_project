@@ -238,7 +238,7 @@ function data_loaded(error, usobj, elvoteobj, centerobj, labelobj, ptrobj) {
 						if (d.properties.pop8[0] > d.properties.pop8[1]) {
 				        	return "State Winner: Barack Obama";
 						} else {
-							return "State Winner: Mitt Romney";
+							return "State Winner: John McCain";
 						}
 					})
 			.attr("x", state_stat_off)

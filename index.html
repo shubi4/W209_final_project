@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <!--<link href="css/stylish-portfolio.css" rel="stylesheet">-->
+    <!-- <link href="css/stylish-portfolio.css" rel="stylesheet"> -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
 
@@ -233,6 +233,12 @@
 		  }
         /* End: Loris - Controls */
 
+        /* Start: What's next section */
+        .link_under {
+            text-decoration: underline;
+	}
+        /* End: What's next section */
+
 <p>
     </style>
 </head>
@@ -240,7 +246,7 @@
 <body>
   <div id="wrapper">
      <!-- Sidebar -->
-     <div id="sidebar-wrapper">
+     <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
@@ -260,13 +266,13 @@
                     <a href="#past_2008">2008</a>
                 </li>
                 <li>
-                    <a href="#footer">What's Next</a>
+                    <a href="#whats_next">What's Next</a>
                 </li>
                 <li>
                     <a href="#footer">Contact</a>
                 </li>
             </ul>
-   </div>
+   </nav>
    <!-- /#sidebar-wrapper -->
 
    <div id="page-content-wrapper">
@@ -280,14 +286,8 @@
 			<div class="container">
 			<p class="lead" align="center" style="font-weight:bold"><br/>>> Click on a year for details <<<br/></p>
 			</div>
-			<div id="main_menu"></div>
-			<div class="container">
-				<div style="font-size:30pt;text-decoration: underline;color:green;font-weight: bold;cursor: pointer;font-family: Calibri, sans-serif;" onclick="actionCall(2016);">
-					<div  align="right" >Who wins?</div>
-				</div>
-			</div>	
-            <a href="#2016nav" class="btn btn-dark btn-lg">Explore</a>
-			<a id ="anchor_2016" href="#2016nav"></a>
+            <div id="main_menu"></div>
+	    <a id ="anchor_2016" href="#2016nav"></a>
             <a id ="anchor_2012" href="#2012nav"></a>
             <a id ="anchor_2008" href="#2008nav"></a>
         </div>
@@ -343,7 +343,7 @@
             </div>
         </div>
         <div class="container" style="float: top">
-        <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
+        <p class="lead" style="font-weight:bold"><br/>>>Click on a state to see details<<<br/></p>
         </div>
         <div class="container-fluid" style="float: top">
             <div class="row">
@@ -446,7 +446,7 @@
             </div>
         </div>
         <div class="container" style="float: top">
-        <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
+        <p class="lead" style="font-weight:bold"><br/>>>Click on a state to see details<<<br/></p>
         </div>
         <div class="container-fluid" style="float: top">
             <div class="row">
@@ -513,21 +513,57 @@
             </div>
         </div>
         <div class="container" style="float: top">
-        <p class="lead" style="font-weight:bold"><br/>>Click on a state to see details<<<br/></p>
+        <p class="lead" style="font-weight:bold"><br/>>>Click on a state to see details<<<br/></p>
         </div>
         <div class="container-fluid" style="float: top">
             <div class="row">
                 <div class="col-md-8" id="map_2008">
                 </div>
                 <div class="col-md-4">
-                    <div class="row" id="state_2008" style="float: right">
+                    <div class="row" id="state_2008" style="float: left">
                     </div>
-                    <div class="row" id="state_bar_2008" style="float: right">
+                    <div class="row" id="state_bar_2008" style="float: left">
                     </div>
                 </div>
             </div>
         </div>
         
+    </section>
+
+
+    <section id="whats_next" class="past">
+
+    <h1 align="center">Other Visualizations You May Like</h1>
+    <hr align="center" class="small style2">
+    <br/>
+
+    <ul class="link_under">
+    <li>
+        <a href="https://gsa-cmp-fileupload.s3.amazonaws.com/pdf6099%20%283%29.pdf?Mn9LsC_GfmXkeckbkrjkaEX8UVG6fRaZ">The election process, illustrated </a>
+    </li>
+    <li>
+        <a href="https://votesmart.org/education/electoral-college#.V162EZErKhci">Some facts and visualizations about electoral college. Particularly important is the heat map at the bottom showing the contribution of each state to the EC</a>
+    </li>
+    <li>
+        <a href="http://www.270towin.com/historical-presidential-elections/timeline/">Historical results, by state</a>
+    </li>
+    <li>
+        <a href="http://metrocosm.com/us-presidential-elections/">Elections by state, historical results and some interesting facts</a> 
+    </li>
+    <li>
+        <a href="http://graphics.wsj.com/elections/2016/delegate-simulator/">This is a simple graphic that allows you play around with selecting states and seeing how it affects the total delegate count needed to clinch the primaries.
+    </li>
+    <li>
+        <a href="http://www.wsj.com/articles/electoral-map-looks-daunting-for-donald-trump-1462407971">Some analysis about the upcoming 2016 elections (text article at the end of this document)</a>
+    </li>
+    <li>
+        <a href="http://graphics.wsj.com/americamapped/">Another amazing graphic from WSJ showing the county breakdownd</a>
+    </li>
+    <li>
+        <a href="http://elections.nytimes.com/2012/ratings/electoral-map">Really cool visualization scenarios 2012</a>
+    </li>
+    </ul>
+
     </section>
 
 
